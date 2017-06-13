@@ -1,0 +1,643 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D679B46-3629-4143-B77F-ABD6E0AC4490}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pixytech.Desktop.Presentation</RootNamespace>
+    <AssemblyName>Pixytech.Desktop.Presentation</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Costura, Version=1.6.2.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Costura.Fody.1.6.2\lib\dotnet\Costura.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Composition, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Composition.5.0.0\lib\NET45\Microsoft.Practices.Prism.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Interactivity.5.0.0\lib\NET45\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Mvvm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Mvvm.1.0.0\lib\net45\Microsoft.Practices.Prism.Mvvm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Mvvm.Desktop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Mvvm.1.0.0\lib\net45\Microsoft.Practices.Prism.Mvvm.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.PubSubEvents, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.PubSubEvents.1.1.2\lib\portable-sl5+windowsphone8+windows8+net40+wpa81\Microsoft.Practices.Prism.PubSubEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.SharedInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Mvvm.1.0.0\lib\net45\Microsoft.Practices.Prism.SharedInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AvalonDock\AssemblyVersionInfo.cs" />
+    <Compile Include="AvalonDock\AssemblyVersionInfoCommon.cs" />
+    <Compile Include="AvalonDock\Commands\RelayCommand.cs" />
+    <Compile Include="AvalonDock\Controls\AnchorablePaneControlOverlayArea.cs" />
+    <Compile Include="AvalonDock\Controls\AnchorablePaneDropTarget.cs" />
+    <Compile Include="AvalonDock\Controls\AnchorablePaneTabPanel.cs" />
+    <Compile Include="AvalonDock\Controls\AnchorablePaneTitle.cs" />
+    <Compile Include="AvalonDock\Controls\AutoHideWindowManager.cs" />
+    <Compile Include="AvalonDock\Controls\BindingHelper.cs" />
+    <Compile Include="AvalonDock\Controls\ContextMenuEx.cs" />
+    <Compile Include="AvalonDock\Controls\DockingManagerDropTarget.cs" />
+    <Compile Include="AvalonDock\Controls\DockingManagerOverlayArea.cs" />
+    <Compile Include="AvalonDock\Controls\DocumentPaneControlOverlayArea.cs" />
+    <Compile Include="AvalonDock\Controls\DocumentPaneDropAsAnchorableTarget.cs" />
+    <Compile Include="AvalonDock\Controls\DocumentPaneDropTarget.cs" />
+    <Compile Include="AvalonDock\Controls\DocumentPaneGroupDropTarget.cs" />
+    <Compile Include="AvalonDock\Controls\DocumentPaneTabPanel.cs" />
+    <Compile Include="AvalonDock\Controls\DragService.cs" />
+    <Compile Include="AvalonDock\Controls\DropArea.cs" />
+    <Compile Include="AvalonDock\Controls\DropDownButton.cs" />
+    <Compile Include="AvalonDock\Controls\DropDownControlArea.cs" />
+    <Compile Include="AvalonDock\Controls\DropTarget.cs" />
+    <Compile Include="AvalonDock\Controls\DropTargetBase.cs" />
+    <Compile Include="AvalonDock\Controls\DropTargetType.cs" />
+    <Compile Include="AvalonDock\Controls\Extentions.cs" />
+    <Compile Include="AvalonDock\Controls\FocusElementManager.cs" />
+    <Compile Include="AvalonDock\Controls\FullWeakDictionary.cs" />
+    <Compile Include="AvalonDock\Controls\IDropTarget.cs" />
+    <Compile Include="AvalonDock\Controls\IOverlayWindow.cs" />
+    <Compile Include="AvalonDock\Controls\IOverlayWindowArea.cs" />
+    <Compile Include="AvalonDock\Controls\IOverlayWindowDropTarget.cs" />
+    <Compile Include="AvalonDock\Controls\IOverlayWindowHost.cs" />
+    <Compile Include="AvalonDock\Controls\LayoutAnchorableControl.cs" />
+    <Compile Include="AvalonDock\Controls\LayoutAnchorableFloatingWindowControl.cs" />
+    <Compile Include="AvalonDock\Controls\LayoutAnchorableItem.cs" />
+    <Compile Include="AvalonDock\Controls\LayoutAnchorablePaneControl.cs" />
+    <Compile Include="AvalonDock\Controls\LayoutAnchorablePaneGroupControl.cs" />
+    <Compile Include="AvalonDock\Controls\LayoutAnchorableTabItem.cs" />
+    <Compile Include="AvalonDock\Controls\LayoutAnchorControl.cs" />
+    <Compile Include="AvalonDock\Controls\LayoutAnchorGroupControl.cs" />
+    <Compile Include="AvalonDock\Controls\LayoutAnchorSideControl.cs" />
+    <Compile Include="AvalonDock\Controls\LayoutAutoHideWindowControl.cs" />
+    <Compile Include="AvalonDock\Controls\LayoutDocumentControl.cs" />
+    <Compile Include="AvalonDock\Controls\LayoutDocumentFloatingWindowControl.cs" />
+    <Compile Include="AvalonDock\Controls\LayoutDocumentItem.cs" />
+    <Compile Include="AvalonDock\Controls\LayoutDocumentPaneControl.cs" />
+    <Compile Include="AvalonDock\Controls\LayoutDocumentPaneGroupControl.cs" />
+    <Compile Include="AvalonDock\Controls\LayoutDocumentTabItem.cs" />
+    <Compile Include="AvalonDock\Controls\LayoutFloatingWindowControl.cs" />
+    <Compile Include="AvalonDock\Controls\LayoutGridControl.cs" />
+    <Compile Include="AvalonDock\Controls\LayoutGridResizerControl.cs" />
+    <Compile Include="AvalonDock\Controls\LayoutItem.cs" />
+    <Compile Include="AvalonDock\Controls\LayoutPanelControl.cs" />
+    <Compile Include="AvalonDock\Controls\MenuItemEx.cs" />
+    <Compile Include="AvalonDock\Controls\NavigatorWindow.cs" />
+    <Compile Include="AvalonDock\Controls\OverlayArea.cs" />
+    <Compile Include="AvalonDock\Controls\OverlayWindow.cs" />
+    <Compile Include="AvalonDock\Controls\OverlayWindowDropTarget.cs" />
+    <Compile Include="AvalonDock\Controls\OverlayWindowDropTargetType.cs" />
+    <Compile Include="AvalonDock\Controls\ReentrantFlag.cs" />
+    <Compile Include="AvalonDock\Controls\TransformExtentions.cs" />
+    <Compile Include="AvalonDock\Controls\WeakDictionary.cs" />
+    <Compile Include="AvalonDock\Controls\WindowActivateEventArgs.cs" />
+    <Compile Include="AvalonDock\Controls\WindowHookHandler.cs" />
+    <Compile Include="AvalonDock\Converters\ActivateCommandLayoutItemFromLayoutModelConverter.cs" />
+    <Compile Include="AvalonDock\Converters\AnchorSideToAngleConverter.cs" />
+    <Compile Include="AvalonDock\Converters\AnchorSideToOrientationConverter.cs" />
+    <Compile Include="AvalonDock\Converters\AutoHideCommandLayoutItemFromLayoutModelConverter.cs" />
+    <Compile Include="AvalonDock\Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="AvalonDock\Converters\HideCommandLayoutItemFromLayoutModelConverter.cs" />
+    <Compile Include="AvalonDock\Converters\InverseBoolToVisibilityConverter.cs" />
+    <Compile Include="AvalonDock\Converters\LayoutItemFromLayoutModelConverter.cs" />
+    <Compile Include="AvalonDock\Converters\NullToDoNothingConverter.cs" />
+    <Compile Include="AvalonDock\Converters\UriSourceToBitmapImageConverter.cs" />
+    <Compile Include="AvalonDock\DockingManager.cs" />
+    <Compile Include="AvalonDock\DocumentClosedEventArgs.cs" />
+    <Compile Include="AvalonDock\DocumentClosingEventArgs.cs" />
+    <Compile Include="AvalonDock\Extentions.cs" />
+    <Compile Include="AvalonDock\LayoutEventArgs.cs" />
+    <Compile Include="AvalonDock\Layout\AnchorableShowStrategy.cs" />
+    <Compile Include="AvalonDock\Layout\AnchorSide.cs" />
+    <Compile Include="AvalonDock\Layout\ChildrenTreeChangedEventArgs.cs" />
+    <Compile Include="AvalonDock\Layout\Extentions.cs" />
+    <Compile Include="AvalonDock\Layout\ILayoutAnchorablePane.cs" />
+    <Compile Include="AvalonDock\Layout\ILayoutContainer.cs" />
+    <Compile Include="AvalonDock\Layout\ILayoutContentSelector.cs" />
+    <Compile Include="AvalonDock\Layout\ILayoutControl.cs" />
+    <Compile Include="AvalonDock\Layout\ILayoutDocumentPane.cs" />
+    <Compile Include="AvalonDock\Layout\ILayoutElement.cs" />
+    <Compile Include="AvalonDock\Layout\ILayoutElementWithVisibility.cs" />
+    <Compile Include="AvalonDock\Layout\ILayoutGroup.cs" />
+    <Compile Include="AvalonDock\Layout\ILayoutOrientableElement.cs" />
+    <Compile Include="AvalonDock\Layout\ILayoutPane.cs" />
+    <Compile Include="AvalonDock\Layout\ILayoutPanelElement.cs" />
+    <Compile Include="AvalonDock\Layout\ILayoutPaneSerializable.cs" />
+    <Compile Include="AvalonDock\Layout\ILayoutPositionableElement.cs" />
+    <Compile Include="AvalonDock\Layout\ILayoutPreviousContainer.cs" />
+    <Compile Include="AvalonDock\Layout\ILayoutRoot.cs" />
+    <Compile Include="AvalonDock\Layout\ILayoutUpdateStrategy.cs" />
+    <Compile Include="AvalonDock\Layout\LayoutAnchorable.cs" />
+    <Compile Include="AvalonDock\Layout\LayoutAnchorableFloatingWindow.cs" />
+    <Compile Include="AvalonDock\Layout\LayoutAnchorablePane.cs" />
+    <Compile Include="AvalonDock\Layout\LayoutAnchorablePaneGroup.cs" />
+    <Compile Include="AvalonDock\Layout\LayoutAnchorGroup.cs" />
+    <Compile Include="AvalonDock\Layout\LayoutAnchorSide.cs" />
+    <Compile Include="AvalonDock\Layout\LayoutContent.cs" />
+    <Compile Include="AvalonDock\Layout\LayoutDocument.cs" />
+    <Compile Include="AvalonDock\Layout\LayoutDocumentFloatingWindow.cs" />
+    <Compile Include="AvalonDock\Layout\LayoutDocumentPane.cs" />
+    <Compile Include="AvalonDock\Layout\LayoutDocumentPaneGroup.cs" />
+    <Compile Include="AvalonDock\Layout\LayoutElement.cs" />
+    <Compile Include="AvalonDock\Layout\LayoutElementEventArgs.cs" />
+    <Compile Include="AvalonDock\Layout\LayoutFloatingWindow.cs" />
+    <Compile Include="AvalonDock\Layout\LayoutGroup.cs" />
+    <Compile Include="AvalonDock\Layout\LayoutGroupBase.cs" />
+    <Compile Include="AvalonDock\Layout\LayoutPanel.cs" />
+    <Compile Include="AvalonDock\Layout\LayoutPositionableGroup.cs" />
+    <Compile Include="AvalonDock\Layout\LayoutRoot.cs" />
+    <Compile Include="AvalonDock\Layout\Serialization\LayoutSerializationCallbackEventArgs.cs" />
+    <Compile Include="AvalonDock\Layout\Serialization\LayoutSerializer.cs" />
+    <Compile Include="AvalonDock\Layout\Serialization\XmlLayoutSerializer.cs" />
+    <Compile Include="AvalonDock\MathHelper.cs" />
+    <Compile Include="AvalonDock\Themes\DictionaryTheme.cs" />
+    <Compile Include="AvalonDock\Themes\ModernTheme.cs" />
+    <Compile Include="AvalonDock\Themes\ModernUI\DropDownButtonImageConverter.cs" />
+    <Compile Include="AvalonDock\Themes\Theme.cs" />
+    <Compile Include="AvalonDock\Win32Helper.cs" />
+    <Compile Include="AvalonDock\WindowHelper.cs" />
+    <Compile Include="Behaviors\BehaviorBase.cs" />
+    <Compile Include="Behaviors\ContextCleanUp.cs" />
+    <Compile Include="Behaviors\ControlProperties.cs" />
+    <Compile Include="Behaviors\HostWindowBehavior.cs" />
+    <Compile Include="Behaviors\KeyboardFocus.cs" />
+    <Compile Include="Behaviors\RepositionPopupBehavior.cs" />
+    <Compile Include="Bindings\CommandBindingAdapter.cs" />
+    <Compile Include="Bindings\FreezableBinding.cs" />
+    <Compile Include="Bindings\PushBinding.cs" />
+    <Compile Include="Bindings\PushBindingCollection.cs" />
+    <Compile Include="Bindings\PushBindingManager.cs" />
+    <Compile Include="Controls\AutoCompleteTextBox\AutoCompleteTextBox.cs" />
+    <Compile Include="Controls\AutoCompleteTextBox\BindingEvaluator.cs" />
+    <Compile Include="Controls\AutoCompleteTextBox\ISuggestionProvider.cs" />
+    <Compile Include="Controls\AutoCompleteTextBox\SelectionAdapter.cs" />
+    <Compile Include="Controls\AutoCompleteTextBox\SuggestionProvider.cs" />
+    <Compile Include="Controls\DpiAwareWindow.cs" />
+    <Compile Include="Controls\ModernBusyIndicator.cs" />
+    <Compile Include="Controls\ModernButton.cs" />
+    <Compile Include="Controls\ModernProgressRing.cs" />
+    <Compile Include="Controls\ModernWindow.cs" />
+    <Compile Include="Controls\Planerator.cs" />
+    <Compile Include="Controls\RelativeAnimatingContentControl.cs" />
+    <Compile Include="Controls\Sketch\SketchBase.cs" />
+    <Compile Include="Controls\Sketch\SketchBorder.cs" />
+    <Compile Include="Controls\Sketch\SketchCircle.cs" />
+    <Compile Include="Controls\Sketch\SketchRectangle.cs" />
+    <Compile Include="Converters\BooleanToFontWeightConverter.cs" />
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\IsValidEnumConvertor.cs" />
+    <Compile Include="Converters\MultiplicationFactorConvertor.cs" />
+    <Compile Include="Converters\NullOrEmptyStringToVisibilityConverter.cs" />
+    <Compile Include="Converters\NullToVisibilityConverter.cs" />
+    <Compile Include="Converters\ToCapatilizeCaseConverter.cs" />
+    <Compile Include="Converters\ToLowerConverter.cs" />
+    <Compile Include="Converters\ToTitleCaseConverter.cs" />
+    <Compile Include="Converters\ToUpperConverter.cs" />
+    <Compile Include="DataVisualization\AggregatedObservableCollection.cs" />
+    <Compile Include="DataVisualization\Charting\AnimationSequence.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\Axis.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\AxisIntervalType.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\AxisLabel.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\AxisLocation.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\AxisOrientation.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\CategoryAxis.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\CategorySortOrder.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\DateTimeAxis.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\DateTimeAxisLabel.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\DateTimeIntervalType.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\DisplayAxis.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\DisplayAxisGridLines.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\IAnchoredToOrigin.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\IAxis.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\IAxisListener.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\ICategoryAxis.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\IDataConsumer.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\IDataProvider.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\IRangeAxis.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\IRangeConsumer.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\IRangeProvider.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\IValueMarginConsumer.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\IValueMarginProvider.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\LinearAxis.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\NullableConverter.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\NumericAxis.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\NumericAxisLabel.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\OrientedAxisGridLines.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\RangeAxis.cs" />
+    <Compile Include="DataVisualization\Charting\Axis\ValueMargin.cs" />
+    <Compile Include="DataVisualization\Charting\Chart\Chart.cs" />
+    <Compile Include="DataVisualization\Charting\Chart\SeriesHostAxesCollection.cs" />
+    <Compile Include="DataVisualization\Charting\DataPoint\AreaDataPoint.cs" />
+    <Compile Include="DataVisualization\Charting\DataPoint\BarDataPoint.cs" />
+    <Compile Include="DataVisualization\Charting\DataPoint\BubbleDataPoint.cs" />
+    <Compile Include="DataVisualization\Charting\DataPoint\ColumnDataPoint.cs" />
+    <Compile Include="DataVisualization\Charting\DataPoint\DataPoint.cs" />
+    <Compile Include="DataVisualization\Charting\DataPoint\DataPointState.cs" />
+    <Compile Include="DataVisualization\Charting\DataPoint\LineDataPoint.cs" />
+    <Compile Include="DataVisualization\Charting\DataPoint\PieDataPoint.cs" />
+    <Compile Include="DataVisualization\Charting\DataPoint\ScatterDataPoint.cs" />
+    <Compile Include="DataVisualization\Charting\FrameworkElementExtensions.cs" />
+    <Compile Include="DataVisualization\Charting\IRequireSeriesHost.cs" />
+    <Compile Include="DataVisualization\Charting\ISeriesHost.cs" />
+    <Compile Include="DataVisualization\Charting\ISeriesHostExtensions.cs" />
+    <Compile Include="DataVisualization\Charting\Primitives\Edge.cs" />
+    <Compile Include="DataVisualization\Charting\Primitives\EdgePanel.cs" />
+    <Compile Include="DataVisualization\Charting\ResourceDictionaryDispensedEventArgs.cs" />
+    <Compile Include="DataVisualization\Charting\ResourceDictionaryDispenser.cs" />
+    <Compile Include="DataVisualization\Charting\ResourceDictionaryEnumerator.cs" />
+    <Compile Include="DataVisualization\Charting\Series\AreaSeries.cs" />
+    <Compile Include="DataVisualization\Charting\Series\BarSeries.cs" />
+    <Compile Include="DataVisualization\Charting\Series\BubbleSeries.cs" />
+    <Compile Include="DataVisualization\Charting\Series\ColumnBarBaseSeries.cs" />
+    <Compile Include="DataVisualization\Charting\Series\ColumnSeries.cs" />
+    <Compile Include="DataVisualization\Charting\Series\DataPointSeries.cs" />
+    <Compile Include="DataVisualization\Charting\Series\DataPointSeriesWithAxes.cs" />
+    <Compile Include="DataVisualization\Charting\Series\DataPointSingleSeriesWithAxes.cs" />
+    <Compile Include="DataVisualization\Charting\Series\IRequireGlobalSeriesIndex.cs" />
+    <Compile Include="DataVisualization\Charting\Series\ISeries.cs" />
+    <Compile Include="DataVisualization\Charting\Series\LegendItem.cs" />
+    <Compile Include="DataVisualization\Charting\Series\LineAreaBaseSeries.cs" />
+    <Compile Include="DataVisualization\Charting\Series\LineSeries.cs" />
+    <Compile Include="DataVisualization\Charting\Series\PieSeries.cs" />
+    <Compile Include="DataVisualization\Charting\Series\ScatterSeries.cs" />
+    <Compile Include="DataVisualization\Charting\Series\Series.cs" />
+    <Compile Include="DataVisualization\Charting\ValueMarginCoordinateAndOverlap.cs" />
+    <Compile Include="DataVisualization\Collections\LeftLeaningRedBlackTree.cs" />
+    <Compile Include="DataVisualization\Collections\MultipleDictionary.cs" />
+    <Compile Include="DataVisualization\Collections\OrderedMultipleDictionary.cs" />
+    <Compile Include="DataVisualization\DependencyPropertyAnimationHelper.cs" />
+    <Compile Include="DataVisualization\EnumerableFunctions.cs" />
+    <Compile Include="DataVisualization\GenericEqualityComparer.cs" />
+    <Compile Include="DataVisualization\GlobalSuppressions.cs" />
+    <Compile Include="DataVisualization\GridExtensions.cs" />
+    <Compile Include="DataVisualization\IResourceDictionaryDispenser.cs" />
+    <Compile Include="DataVisualization\LayoutTransformControl.cs" />
+    <Compile Include="DataVisualization\Legend\Legend.cs" />
+    <Compile Include="DataVisualization\NoResetObservableCollection.cs" />
+    <Compile Include="DataVisualization\ObjectPool.cs" />
+    <Compile Include="DataVisualization\ObservableCollectionListAdapter.cs" />
+    <Compile Include="DataVisualization\OrientedPanel.cs" />
+    <Compile Include="DataVisualization\Range.cs" />
+    <Compile Include="DataVisualization\RangeEnumerableFunctions.cs" />
+    <Compile Include="DataVisualization\ReadOnlyObservableCollection.cs" />
+    <Compile Include="DataVisualization\ResourceDictionaryCollection.cs" />
+    <Compile Include="DataVisualization\ResourceDictionaryExtensions.cs" />
+    <Compile Include="DataVisualization\StoryboardQueue.cs" />
+    <Compile Include="DataVisualization\StringFormatConverter.cs" />
+    <Compile Include="DataVisualization\Title\Title.cs" />
+    <Compile Include="DataVisualization\TreeMap\BindingExtractor.cs" />
+    <Compile Include="DataVisualization\TreeMap\Interpolators\DoubleInterpolator.cs" />
+    <Compile Include="DataVisualization\TreeMap\Interpolators\InterpolationMode.cs" />
+    <Compile Include="DataVisualization\TreeMap\Interpolators\Interpolator.cs" />
+    <Compile Include="DataVisualization\TreeMap\Interpolators\RangeInterpolator.cs" />
+    <Compile Include="DataVisualization\TreeMap\Interpolators\SolidColorBrushInterpolator.cs" />
+    <Compile Include="DataVisualization\TreeMap\Layout\SquaringAlgorithm.cs" />
+    <Compile Include="DataVisualization\TreeMap\Layout\TreeMapNode.cs" />
+    <Compile Include="DataVisualization\TreeMap\TreeMap.cs" />
+    <Compile Include="DataVisualization\TreeMap\TreeMapItemDefinition.cs" />
+    <Compile Include="DataVisualization\TreeMap\TreeMapItemDefinitionSelector.cs" />
+    <Compile Include="DataVisualization\Tuple.cs" />
+    <Compile Include="DataVisualization\UniqueObservableCollection.cs" />
+    <Compile Include="DataVisualization\Unit.cs" />
+    <Compile Include="DataVisualization\UnitValue.cs" />
+    <Compile Include="DataVisualization\ValueHelper.cs" />
+    <Compile Include="DataVisualization\WeakEventListener.cs" />
+    <Compile Include="DataVisualization\WeakReferenceBag.cs" />
+    <Compile Include="DependencyInjection\PresentationRegistry.cs" />
+    <Compile Include="Helpers\DefaultClipboard.cs" />
+    <Compile Include="Helpers\DpiInformation.cs" />
+    <Compile Include="Helpers\IClipboard.cs" />
+    <Compile Include="Helpers\LazyFocusManager.cs" />
+    <Compile Include="Helpers\ModernUIHelper.cs" />
+    <Compile Include="Helpers\MonitorDpiType.cs" />
+    <Compile Include="Helpers\ProcessDpiAwareness.cs" />
+    <Compile Include="Helpers\Win32\NativeMethods.cs" />
+    <Compile Include="Helpers\Win32\OSVersionHelper.cs" />
+    <Compile Include="Helpers\Win32\RECT.cs" />
+    <Compile Include="Helpers\WindowHelper.cs" />
+    <Compile Include="Interactivity\AttachableCollection.cs" />
+    <Compile Include="Interactivity\Behavior.cs" />
+    <Compile Include="Interactivity\BehaviorCollection.cs" />
+    <Compile Include="Interactivity\BehaviorOfT.cs" />
+    <Compile Include="Interactivity\IAttachedObject.cs" />
+    <Compile Include="Interactivity\Interaction.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="Services\DialogOptions.cs" />
+    <Compile Include="Services\DialogService.cs" />
+    <Compile Include="Services\FileDialogService.cs" />
+    <Compile Include="Services\MessagBoxService.cs" />
+    <Compile Include="Services\ResourceAggregatorService.cs" />
+    <Compile Include="Services\Theme.cs" />
+    <Compile Include="Services\ThemeService.cs" />
+    <Compile Include="ViewModels\MessageBoxViewModel.cs" />
+    <Compile Include="ViewModels\ThemeBuilderViewModel.cs" />
+    <Compile Include="Views\MessageBoxView.xaml.cs">
+      <DependentUpon>MessageBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ThemeBuilderView.xaml.cs">
+      <DependentUpon>ThemeBuilderView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Assets\AutoCompleteTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\AvalonDock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\Calendar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\CheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\ComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\Common.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\ContextMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\Converters.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\DataGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\DatePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\GridSplitter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\Hyperlink.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\Label.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\ListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\ListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\MenuItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\ModernBusyIndicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\ModernButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\ModernProgressRing.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\ModernUI.Dark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\ModernUI.Light.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\ModernUI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\ModernWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\PasswordBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\ProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\RadioButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\ScrollBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\Slider.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\TabControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\TextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\TextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\ToolBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\ToolBarTray.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\ToolTip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\TreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AvalonDock\Themes\ModernUI\Common.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AvalonDock\Themes\ModernUI\Shared.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AvalonDock\Themes\ModernUI\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataVisualization\Themes\generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Properties\DesignTimeResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ViewMappings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Framework.Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Framework.Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MessageBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ThemeBuilderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AvalonDock\License.txt" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\dockanchorablebottom.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\dockanchorableleft.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\dockanchorableright.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\dockanchorabletop.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\dockdocumentasanchorablebottom.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\dockdocumentasanchorableleft.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\dockdocumentasanchorableright.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\dockdocumentasanchorabletop.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\dockdocumentbottom.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\dockdocumentinside.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\dockdocumentleft.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\dockdocumentright.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\dockdocumenttop.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\dockpaneempty.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\dockpanelargeempty.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\htabgroup.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\locked.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\pinautohide_white.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\pinclose_white.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\pindocmenu_black.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\pindocmenu_white.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\pinmaximize_white.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\pinmenu_white.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\pinrestore_white.png" />
+    <Content Include="AvalonDock\Themes\ModernUI\Images\vtabgroup.png" />
+    <None Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pixytech.Core\Pixytech.Core.csproj">
+      <Project>{30cf2675-f9f1-4996-80f4-7df2ecc03d44}</Project>
+      <Name>Pixytech.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pixytech.Desktop.Infrastructure\Pixytech.Desktop.Presentation.Infrastructure.csproj">
+      <Project>{3cd38068-d362-4297-9aff-e263c9a7153e}</Project>
+      <Name>Pixytech.Desktop.Presentation.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Fody.2.1.0\build\netstandard1.0\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.2.1.0\build\netstandard1.0\Fody.targets'))" />
+  </Target>
+  <Import Project="..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" />
+  <Import Project="..\packages\Fody.2.1.0\build\netstandard1.0\Fody.targets" Condition="Exists('..\packages\Fody.2.1.0\build\netstandard1.0\Fody.targets')" />
+</Project>
