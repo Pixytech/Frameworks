@@ -1,0 +1,14 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   >
+
+    <ResourceDictionary.MergedDictionaries>
+        
+        
+        <ResourceDictionary Source="/Demo.Presentation;component/Styles/Demo.Styles.xaml"/>
+        <ResourceDictionary Source="/Demo.Presentation;component/Styles/Demo.Theme.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+
+</ResourceDictionary>

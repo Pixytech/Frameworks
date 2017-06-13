@@ -293,7 +293,7 @@ namespace Pixytech.Desktop.Presentation.DataVisualization
         public Collection<Interpolator> Interpolators
         {
             get { return (Collection<Interpolator>)GetValue(InterpolatorsProperty); }
-            set { throw new NotSupportedException(Wpf.Presentation.Properties.Resources.TreeMap_Interpolators_SetterNotSupported); }
+            set { throw new NotSupportedException(Desktop.Presentation.Properties.Resources.TreeMap_Interpolators_SetterNotSupported); }
         }
         
         /// <summary>
@@ -573,7 +573,7 @@ namespace Pixytech.Desktop.Presentation.DataVisualization
                 if (template == null)
                 {
                     throw new ArgumentException(
-                        Wpf.Presentation.Properties.Resources.TreeMap_BuildTreeMapTree_TemplateNotSet);
+                        Desktop.Presentation.Properties.Resources.TreeMap_BuildTreeMapTree_TemplateNotSet);
                 }
 
                 // Silently create 0 elements if ValueBinding is set to null 
@@ -690,7 +690,7 @@ namespace Pixytech.Desktop.Presentation.DataVisualization
                                 if (interpolator.DataRangeBinding == null)
                                 {
                                     throw new ArgumentException(
-                                        Wpf.Presentation.Properties.Resources.TreeMap_CreateChildren_InterpolatorBindingNotSet);
+                                        Desktop.Presentation.Properties.Resources.TreeMap_CreateChildren_InterpolatorBindingNotSet);
                                 }
 
                                 // Extract the current value to interpolate
@@ -700,7 +700,7 @@ namespace Pixytech.Desktop.Presentation.DataVisualization
                                 if (value == null)
                                 {
                                     throw new ArgumentException(
-                                        Wpf.Presentation.Properties.Resources.Interpolator_IncludeInRange_DataRangeBindingNotIConvertible);
+                                        Desktop.Presentation.Properties.Resources.Interpolator_IncludeInRange_DataRangeBindingNotIConvertible);
                                 }
 
                                 // This will update the TargetProperty of the TargetName object

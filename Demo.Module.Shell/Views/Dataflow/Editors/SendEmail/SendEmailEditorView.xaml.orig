@@ -1,0 +1,132 @@
+﻿<UserControl x:Class="Graphnet.Dashboard.CoreUI.Views.Dataflow.Editors.SendEmail.SendEmailEditorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:gc="http://schemas.graphnethealth.com/presentation"
+             xmlns:bindings="clr-namespace:Graphnet.Wpf.Presentation.Bindings;assembly=Graphnet.Wpf.Presentation"
+             xmlns:behaviors="clr-namespace:Graphnet.Dashboard.CoreUI.Behaviors"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid  >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="Message Data" Margin="5"/>
+            <ComboBox Grid.Row="0" Grid.Column="1" Margin="5"  
+                  IsEditable="False" 
+                      DataContext="{Binding DataContext,RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                  ItemsSource="{Binding Variables}"
+                  SelectedItem="{Binding EmailData,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnValidationError=True,ValidatesOnNotifyDataErrors=True}" 
+                  HorizontalAlignment="Stretch"
+                  >
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+        </Grid>
+        <ContentControl Grid.Row="1" IsEnabled="{Binding AllowEdits}">
+        <Grid  DataContext="{Binding SendEmailOptions}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <CheckBox Grid.Column="0" Grid.Row="0" Content="Check variable value" Margin="5" IsChecked="{Binding IsVariableCheckRequired,Mode=TwoWay}"/>
+                
+                <ComboBox Grid.Row="0" Grid.Column="1" Margin="5"  Grid.ColumnSpan="2"
+                  IsEditable="False" VerticalAlignment ="Top"
+                  IsEnabled="{Binding IsVariableCheckRequired}"
+                          
+                  ItemsSource="{Binding DataContext.BoolVariables,RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                  SelectedItem="{Binding EmailRequiredVariable,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnValidationError=True,ValidatesOnNotifyDataErrors=True}" 
+                  HorizontalAlignment="Stretch">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <TextBlock Grid.Column="0" Grid.Row="1" Text="From"  Margin="5" />
+
+                <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="5" HorizontalAlignment="Stretch" Text="{Binding From,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}"/>
+
+
+                <TextBlock Grid.Column="0" Grid.Row="2" Text="Recipients" Margin="5"/>
+
+                <DataGrid Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" ItemsSource="{Binding Recipients}" SelectedItem="{Binding SelectedRecipient, Mode=TwoWay}" SelectionMode="Single" IsReadOnly="True"  AutoGenerateColumns="False" GridLinesVisibility="All" Margin="5" >
+                    <bindings:PushBindingManager.PushBindings>
+                        <bindings:PushBinding TargetProperty="SelectedItems" Path="SelectedRecipient" UpdateSourceTrigger="PropertyChanged" />
+                    </bindings:PushBindingManager.PushBindings>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Type" Binding="{Binding RecipientType}"   />
+                        <DataGridTextColumn Header="Email Address" Binding="{Binding Recipient.EmailAddress}"   />
+                    </DataGrid.Columns>
+                </DataGrid>
+                <StackPanel Grid.Column="2" Grid.Row="3"  Orientation="Vertical" VerticalAlignment="Center" Margin="5" HorizontalAlignment="Left" >
+                    <gc:ModernButton IconData="{StaticResource Dashboard.Icon.UserAdd}" Command="{Binding AddRecipientCommand}" Content="Add" Margin="5"/>
+                    <gc:ModernButton IconData="{StaticResource Dashboard.Icon.Edit}" Command="{Binding EditRecipientCommand}" Content="Edit" Margin="5"/>
+                    <gc:ModernButton IconData="{StaticResource Dashboard.Icon.Delete}" Command="{Binding DeleteRecipientCommand}" Content="Delete" Margin="5"/>
+                </StackPanel>
+
+                <TextBlock Grid.Column="0" Grid.Row="4" Text="Subject" Margin="5"/>
+                <TextBox   Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="{Binding Subject,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}" HorizontalAlignment="Stretch" Margin="5,5,5,5" Grid.ColumnSpan="2" >
+                    <gc:Interaction.Behaviors>
+                        <behaviors:SetCaretIndexBehavior CaretPosition="{Binding SubjectCaretIndex,Mode=TwoWay}" />
+                    </gc:Interaction.Behaviors>
+                    <TextBox.ContextMenu>
+                        <ContextMenu  ItemsSource="{Binding ContextFields}" >
+                            <ContextMenu.ItemTemplate>
+                                <DataTemplate>
+                                    <MenuItem Header="{Binding Name}"  Command="{Binding DataContext.AddVariableSubjectCommand,RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}" CommandParameter="{Binding Name}" />
+                                </DataTemplate>
+                            </ContextMenu.ItemTemplate>
+
+                        </ContextMenu>
+                    </TextBox.ContextMenu>
+                </TextBox>
+                <TextBlock Grid.Column="0" Grid.Row="5" Text="Body" Margin="5"/>
+                <TextBox Name="TemplateBodyText" Grid.Column="1" Grid.Row="5" Height="150" AcceptsReturn="True" AcceptsTab="True" TextWrapping="Wrap" Text="{Binding Body,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}" HorizontalAlignment="Stretch" Margin="5,5,5,5" Grid.ColumnSpan="2" >
+                    <gc:Interaction.Behaviors>
+                        <behaviors:SetCaretIndexBehavior CaretPosition="{Binding BodyCaretIndex,Mode=TwoWay}" />
+                    </gc:Interaction.Behaviors>
+                    <TextBox.ContextMenu>
+                        <ContextMenu  ItemsSource="{Binding ContextFields}" >
+                            <ContextMenu.ItemTemplate>
+                                <DataTemplate>
+                                    <MenuItem Header="{Binding Name}"  Command="{Binding DataContext.AddVariableCommand,RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}" CommandParameter="{Binding Name}" />
+                                </DataTemplate>
+                            </ContextMenu.ItemTemplate>
+
+                        </ContextMenu>
+                    </TextBox.ContextMenu>
+                </TextBox>
+
+            </Grid>
+        </ContentControl>
+
+    </Grid>
+
+</UserControl>

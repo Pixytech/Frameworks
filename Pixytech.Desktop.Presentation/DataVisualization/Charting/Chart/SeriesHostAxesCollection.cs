@@ -136,11 +136,11 @@ namespace Pixytech.Desktop.Presentation.DataVisualization.Charting.Chart
 
             if (SeriesHost.IsUsedByASeries(axis))
             {
-                throw new InvalidOperationException(Wpf.Presentation.Properties.Resources.SeriesHostAxesCollection_RemoveItem_AxisCannotBeRemovedFromASeriesHostWhenOneOrMoreSeriesAreListeningToIt);
+                throw new InvalidOperationException(Desktop.Presentation.Properties.Resources.SeriesHostAxesCollection_RemoveItem_AxisCannotBeRemovedFromASeriesHostWhenOneOrMoreSeriesAreListeningToIt);
             }
             else if (PersistentAxes.Contains(axis))
             {
-                throw new InvalidOperationException(Wpf.Presentation.Properties.Resources.SeriesHostAxesCollection_InvalidAttemptToRemovePermanentAxisFromSeriesHost);
+                throw new InvalidOperationException(Desktop.Presentation.Properties.Resources.SeriesHostAxesCollection_InvalidAttemptToRemovePermanentAxisFromSeriesHost);
             }
             else
             {

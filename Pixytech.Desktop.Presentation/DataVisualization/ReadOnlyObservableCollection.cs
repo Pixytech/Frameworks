@@ -65,7 +65,7 @@ namespace Pixytech.Desktop.Presentation.DataVisualization
         {
             if (!IsMutating)
             {
-                throw new NotSupportedException(Wpf.Presentation.Properties.Resources.ReadOnlyObservableCollection_CollectionIsReadOnly);
+                throw new NotSupportedException(Desktop.Presentation.Properties.Resources.ReadOnlyObservableCollection_CollectionIsReadOnly);
             }
             else
             {

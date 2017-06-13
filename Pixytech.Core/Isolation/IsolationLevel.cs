@@ -3,7 +3,6 @@
     public enum IsolationLevel
     {
         None,
-        Medium,
-        Highest
+        Medium
     }
 }

@@ -1,0 +1,13 @@
+﻿<Application x:Class="Demo.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:services="http://www.demo.com/presentation/services">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Demo.Presentation;component/Themes/Generic.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <!--<services:RandomColorService x:Key="RandomColorService" />-->
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

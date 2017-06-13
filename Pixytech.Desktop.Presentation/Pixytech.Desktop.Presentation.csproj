@@ -9,10 +9,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Pixytech.Desktop.Presentation</RootNamespace>
     <AssemblyName>Pixytech.Desktop.Presentation</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -381,6 +382,7 @@
     <Compile Include="Services\ResourceAggregatorService.cs" />
     <Compile Include="Services\Theme.cs" />
     <Compile Include="Services\ThemeService.cs" />
+    <Compile Include="Utilities\VisualTreeHelperEx.cs" />
     <Compile Include="ViewModels\MessageBoxViewModel.cs" />
     <Compile Include="ViewModels\ThemeBuilderViewModel.cs" />
     <Compile Include="Views\MessageBoxView.xaml.cs">
@@ -607,7 +609,9 @@
     <Content Include="AvalonDock\Themes\ModernUI\Images\pinmenu_white.png" />
     <Content Include="AvalonDock\Themes\ModernUI\Images\pinrestore_white.png" />
     <Content Include="AvalonDock\Themes\ModernUI\Images\vtabgroup.png" />
-    <None Include="FodyWeavers.xml" />
+    <None Include="FodyWeavers.xml">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -1,0 +1,128 @@
+﻿<UserControl x:Class="Graphnet.Dashboard.CoreUI.Views.About"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:sketch="clr-namespace:Graphnet.Wpf.Presentation.Controls.Sketch;assembly=Graphnet.Wpf.Presentation"
+             mc:Ignorable="d" 
+             Background="{DynamicResource WindowBackground}"
+             d:DesignHeight="400" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+
+            <Style TargetType="sketch:SketchBorder" >
+                <Setter Property="BorderBrush" Value="{DynamicResource ModernButtonText}"/>
+            </Style>
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.ColumnSpan="2" TextWrapping="WrapWithOverflow" Foreground="{DynamicResource ModernButtonText}" FontWeight="Normal" Margin="10">
+            <Span>
+                The <Bold>Graphnet Service Dashboard</Bold> is a software model that can be used for viewing and managing core services and components including message infrastructure, 
+                windows services and servers and to help make decisions based on real time data. It provides a simplified <Hyperlink Command="{Binding LaunchWeb}" > web interface </Hyperlink> that allows a summary view of the 
+                services and components. It helps organizations identify trends, monitor performance, measure the impact of their activities and perform corrective actions 
+                around other solutions. The Graphnet dashboard is highly extensible and can be used as a platform to host other modules (or features) based on specific requirements.
+                The dashboard is reliable, scalable and easy to maintain.
+            </Span>
+            <!--<Span> 
+             The <Bold>Graphnet Service Dashboard</Bold> lets administrators to view and manage core Graphnet components including message infrastructure, windows services, servers etc.
+             The simplified view which is a <Hyperlink Command="{Binding LaunchWeb}" > web interface </Hyperlink> allows users to have a summary view of graphnet services and components.The dashboard provides you rich and real-time information that can be used for performance monitoring, 
+             diagnostics and even performing administartive actions to fix the issues.The Information about specific features can be found under respective tabs above.Here are some quick tips to use this application
+            </Span>-->
+            <Separator/>
+        </TextBlock>
+        <Separator Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Bottom" Margin="0,5" Opacity="0.5"/>
+
+        <Canvas  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Height="300" Width="800" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,40,20,20">
+            <sketch:SketchBorder HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Width="512" Height="76" Canvas.Left="88" Canvas.Top="10"/>
+            <sketch:SketchBorder HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Width="100" Height="199" Canvas.Left="88" Canvas.Top="91"/>
+            <sketch:SketchBorder HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Width="54" Height="52" Canvas.Left="100" Canvas.Top="22"/>
+            <sketch:SketchBorder HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Width="54" Height="52" Canvas.Left="159" Canvas.Top="22"/>
+            <sketch:SketchBorder HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Width="54" Height="52" Canvas.Left="218" Canvas.Top="22"/>
+            <TextBlock Text="Workspace" Foreground="{StaticResource Accent}" FontSize="20" Canvas.Left="218" Canvas.Top="119"/>
+            <Border  Canvas.Left="80" Canvas.Top="-12" >
+                <Path Data="{StaticResource Dashboard.Icon.Eye}" Fill="{DynamicResource ModernButtonText}" Stretch="Uniform" Height="20" Width="20" />
+            </Border>
+            <Border  Canvas.Left="523" Canvas.Top="-12" >
+                <Path  Data="{StaticResource Dashboard.Icon.User}" Fill="{DynamicResource ModernButtonText}" Stretch="Uniform" Height="20" Width="20" />
+            </Border>
+            <Border  Canvas.Left="559" Canvas.Top="-12" >
+                <Path Data="{StaticResource Dashboard.Icon.Settings}" Fill="{DynamicResource ModernButtonText}" Stretch="Uniform" Height="20" Width="20" />
+            </Border>
+
+            <Border  Canvas.Left="605" Canvas.Top="37"  >
+                <Path Data="{StaticResource Dashboard.Icon.Bulb}" Fill="{DynamicResource ModernButtonText}" Stretch="Uniform" Height="20" Width="20" />
+            </Border>
+
+            <TextBlock TextWrapping="WrapWithOverflow" Foreground="{DynamicResource ModernButtonText}" FontWeight="Normal" Canvas.Left="-12" Width="87" Canvas.Top="-12">
+                <Span>Use the Eye icon to toggle the visibility of Live matrix panel &amp; Quick launch panel.</Span>
+            </TextBlock>
+
+            <TextBlock  TextWrapping="WrapWithOverflow" Foreground="{DynamicResource ModernButtonText}" FontWeight="Normal" Canvas.Left="231" Canvas.Top="-12">
+                    <Span>This user icon shows your current permission set</Span>
+            </TextBlock>
+
+            <TextBlock TextWrapping="WrapWithOverflow" Foreground="{DynamicResource ModernButtonText}" FontWeight="Normal" Canvas.Left="625" Canvas.Top="-12" Height="50" Width="152">
+                    <Span>Settings allows you to personalize the theme</Span>
+            </TextBlock>
+
+            <TextBlock  TextWrapping="WrapWithOverflow" Foreground="{DynamicResource ModernButtonText}" FontWeight="Normal" Canvas.Left="625" Canvas.Top="52" Height="124" Width="168">
+                    <Span>The live matrix provides you the real-time information published from dashboard server</Span>
+            </TextBlock>
+            <TextBlock TextWrapping="WrapWithOverflow" Foreground="{DynamicResource ModernButtonText}" FontWeight="Normal" Canvas.Left="296" Canvas.Top="37">Live matrix - real time information</TextBlock>
+
+            <TextBlock TextWrapping="WrapWithOverflow" Foreground="{DynamicResource ModernButtonText}" FontWeight="Normal" Canvas.Left="100" Canvas.Top="119" Height="80" Width="79">Quick feature launchers</TextBlock>
+
+            <TextBlock TextWrapping="WrapWithOverflow" Foreground="{DynamicResource ModernButtonText}" FontWeight="Normal" Canvas.Left="218" Canvas.Top="172" Height="80" Width="559">
+                <Span>
+                    <Bold>*</Bold> You can undock individual panels to another screen.<LineBreak/>
+                    <Bold>*</Bold> Move your mouse to top of the window to access theme and permissions.<LineBreak/>
+                </Span>
+            </TextBlock>
+
+
+        </Canvas>
+
+        <Grid Visibility="Collapsed" Grid.Row="2" Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+
+
+            <TextBlock Grid.Row="1" Grid.Column="1" TextWrapping="WrapWithOverflow" Foreground="{DynamicResource ModernButtonText}" Margin="10" FontWeight="Normal">
+            <Span>Settings allows you to personalize the theme, few configurations overrides etc.
+                
+            </Span>
+            </TextBlock>
+            <Path Grid.Row="2" Data="{StaticResource Dashboard.Icon.User}" Fill="{DynamicResource ModernButtonText}" Stretch="Uniform" Height="20" Width="20" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" TextWrapping="WrapWithOverflow" Foreground="{DynamicResource ModernButtonText}" Margin="10" FontWeight="Normal">
+            <Span>This will allows you to signin under different windows account and view the permissions granted to you account.</Span>
+            </TextBlock>
+            <Path Grid.Row="3" Data="{StaticResource Dashboard.Icon.Bulb}" Fill="{DynamicResource ModernButtonText}" Stretch="Uniform" Height="20" Width="20" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <TextBlock Grid.Row="3" Grid.Column="1" TextWrapping="WrapWithOverflow" Foreground="{DynamicResource ModernButtonText}" Margin="10" FontWeight="Normal">
+            <Span>The live matrix provides you the real-time information published from dashboard server,you can tear off matrix panel to another screen.</Span>
+            </TextBlock>
+        </Grid>
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Graphnet.Dashboard.CoreUI.Views.LauncherView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:regions="http://www.codeplex.com/CompositeWPF"
+             xmlns:infrastructure="http://www.graphnethealth.com/infrastructure"
+             xmlns:gc="http://schemas.graphnethealth.com/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+        <ScrollViewer Margin="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <ItemsControl Margin="0,0" VerticalAlignment="Top" ItemsSource="{Binding Components}" >
+            <ItemsControl.ItemTemplate>
+                    <ItemContainerTemplate>
+                        <Grid >
+                        <gc:Interaction.Behaviors>
+                            <gc:ContextCleanUp/>
+                        </gc:Interaction.Behaviors>
+                        <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="{Binding ComponentName}" Margin="0,10,0,10" FontSize="18" Style="{StaticResource ModernWindowTitle}" VerticalAlignment="Center" />
+                            <Separator Grid.Row="1" Background="{StaticResource SeparatorBackground}" VerticalAlignment="Center" />
+                            <ItemsControl Grid.Row="2" ItemsSource="{Binding Launchers}" VerticalAlignment="Top" >
+                                <ItemsControl.ItemTemplate>
+                                    <ItemContainerTemplate>
+                                        <Button Content="{Binding Name}" Margin="0,3" Style="{StaticResource LinkButton}" Command="{Binding Command}" VerticalAlignment="Center" />
+                                    </ItemContainerTemplate>
+                                </ItemsControl.ItemTemplate>
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Vertical"/>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                            
+                        </Grid>
+                    </ItemContainerTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </ScrollViewer>
+</UserControl>

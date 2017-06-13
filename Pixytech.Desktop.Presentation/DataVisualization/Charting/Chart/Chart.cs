@@ -63,7 +63,7 @@ namespace Pixytech.Desktop.Presentation.DataVisualization.Charting.Chart
             }
             set
             {
-                throw new NotSupportedException(Wpf.Presentation.Properties.Resources.Chart_Axes_SetterNotSupported);
+                throw new NotSupportedException(Desktop.Presentation.Properties.Resources.Chart_Axes_SetterNotSupported);
             }
         }
 
@@ -140,7 +140,7 @@ namespace Pixytech.Desktop.Presentation.DataVisualization.Charting.Chart
             }
             set
             {
-                throw new NotSupportedException(Wpf.Presentation.Properties.Resources.Chart_Series_SetterNotSupported);
+                throw new NotSupportedException(Desktop.Presentation.Properties.Resources.Chart_Series_SetterNotSupported);
             }
         }
 
@@ -501,7 +501,7 @@ namespace Pixytech.Desktop.Presentation.DataVisualization.Charting.Chart
 
             if (args.NewValue == AxisLocation.Auto)
             {
-                throw new InvalidOperationException(Wpf.Presentation.Properties.Resources.Chart_AxisLocationChanged_CantBeChangedToAutoWhenHostedInsideOfASeriesHost);
+                throw new InvalidOperationException(Desktop.Presentation.Properties.Resources.Chart_AxisLocationChanged_CantBeChangedToAutoWhenHostedInsideOfASeriesHost);
             }
 
             SetEdge(axis);

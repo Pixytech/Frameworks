@@ -199,7 +199,7 @@ namespace Pixytech.Desktop.Presentation.DataVisualization
                 if (input == null)
                 {
                     throw new ArgumentException(
-                        Wpf.Presentation.Properties.Resources.Interpolator_IncludeInRange_DataRangeBindingNotIConvertible);
+                        Desktop.Presentation.Properties.Resources.Interpolator_IncludeInRange_DataRangeBindingNotIConvertible);
                 }
 
                 double value = input.ToDouble(CultureInfo.InvariantCulture);

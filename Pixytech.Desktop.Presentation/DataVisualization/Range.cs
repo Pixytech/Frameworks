@@ -68,7 +68,7 @@ namespace Pixytech.Desktop.Presentation.DataVisualization
             {
                 if (!HasData)
                 {
-                    throw new InvalidOperationException(Wpf.Presentation.Properties.Resources.Range_get_Minimum_CannotReadTheMinimumOfAnEmptyRange);
+                    throw new InvalidOperationException(Desktop.Presentation.Properties.Resources.Range_get_Minimum_CannotReadTheMinimumOfAnEmptyRange);
                 }
                 return _minimum;
             }
@@ -97,7 +97,7 @@ namespace Pixytech.Desktop.Presentation.DataVisualization
             int compareValue = ValueHelper.Compare(minimum, maximum);
             if (compareValue == 1)
             {
-                throw new InvalidOperationException(Wpf.Presentation.Properties.Resources.Range_ctor_MaximumValueMustBeLargerThanOrEqualToMinimumValue);
+                throw new InvalidOperationException(Desktop.Presentation.Properties.Resources.Range_ctor_MaximumValueMustBeLargerThanOrEqualToMinimumValue);
             }
         }
 
@@ -261,11 +261,11 @@ namespace Pixytech.Desktop.Presentation.DataVisualization
         {
             if (!this.HasData)
             {
-                return Wpf.Presentation.Properties.Resources.Range_ToString_NoData;
+                return Desktop.Presentation.Properties.Resources.Range_ToString_NoData;
             }
             else
             {
-                return string.Format(CultureInfo.CurrentCulture, Wpf.Presentation.Properties.Resources.Range_ToString_Data, this.Minimum, this.Maximum);
+                return string.Format(CultureInfo.CurrentCulture, Desktop.Presentation.Properties.Resources.Range_ToString_Data, this.Minimum, this.Maximum);
             }
         }
     }

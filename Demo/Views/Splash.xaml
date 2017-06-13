@@ -1,0 +1,63 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:Pixytech.Desktop.Presentation.Controls;assembly=Pixytech.Desktop.Presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:converters="clr-namespace:Pixytech.Desktop.Presentation.Converters;assembly=Pixytech.Desktop.Presentation"
+        mc:Ignorable="d" x:Class="Demo.Views.Splash"
+        Title="Demo App" 
+        WindowStyle="None" 
+        ShowActivated="True" 
+        ShowInTaskbar="False" 
+        Height="300" 
+        Width="450" 
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        IsHitTestVisible="False"
+        Focusable="False"
+        >
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Demo.Presentation;component/Themes/Generic.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <converters:ToCapatilizeCaseConverter x:Key="ToCapatilizeCaseConverter"/>
+        </ResourceDictionary>
+    </Window.Resources>
+   
+    <Grid>
+        <Border Background="White" Margin="35" CornerRadius="2">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="0" BlurRadius="15"/>
+            </Border.Effect>
+            <Grid>
+                
+                <controls:ModernProgressRing x:Name="ModernProgressRing" IsActive="True"  Width="50" Height="1" Style="{StaticResource WaveProgressRingStyle}" Margin="92,134,92,62" Opacity="0" RenderTransformOrigin="0.5,0.5"   >
+                	<controls:ModernProgressRing.RenderTransform>
+                		<TransformGroup>
+                			<ScaleTransform/>
+                			<SkewTransform/>
+                			<RotateTransform/>
+                			<TranslateTransform/>
+                		</TransformGroup>
+                	</controls:ModernProgressRing.RenderTransform>
+                </controls:ModernProgressRing>
+                <TextBlock x:Name="TextBlock" Text="Demo Application" FontFamily="Segoe UI Semibold" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource Title}" FontWeight="Bold" Foreground="DarkGray" Opacity="0" FontStretch="Expanded" RenderTransformOrigin="0.5,0.5">
+                	<TextBlock.RenderTransform>
+                		<TransformGroup>
+                			<ScaleTransform/>
+                			<SkewTransform/>
+                			<RotateTransform/>
+                			<TranslateTransform/>
+                		</TransformGroup>
+                	</TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock Text="{Binding Message, Converter={StaticResource ToCapatilizeCaseConverter}}" Foreground="Gray" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10,5" TextWrapping="WrapWithOverflow" />
+            </Grid>
+
+        </Border>
+
+    </Grid>
+</Window>

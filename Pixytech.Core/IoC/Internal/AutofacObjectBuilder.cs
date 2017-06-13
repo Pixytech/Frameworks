@@ -95,8 +95,18 @@ namespace Pixytech.Core.IoC.Internal
                 registrationBuilder.PropertiesAutowired();
             }
             SetLifetimeScope(dependencyLifecycle, registrationBuilder);
+            UpdateBuilder(builder);
+
+        }
+
+        private void UpdateBuilder(ContainerBuilder builder)
+        {
             builder.Update(_container.ComponentRegistry);
-        }   
+            //foreach (var reg in _container.ComponentRegistry.Registrations)
+            //{
+            //    builder.RegisterComponent(reg);
+            //}
+        }
 
         void IContainer.Configure(Type component, ObjectLifecycle dependencyLifecycle)
         {
@@ -110,7 +120,7 @@ namespace Pixytech.Core.IoC.Internal
             IRegistrationBuilder<object, ConcreteReflectionActivatorData, SingleRegistrationStyle> registrationBuilder =
                 builder.RegisterType(component).As(services).PropertiesAutowired();
             SetLifetimeScope(dependencyLifecycle, registrationBuilder);
-            builder.Update(_container.ComponentRegistry);
+            UpdateBuilder(builder);
         }
 
         void IContainer.Configure<T>(Func<T> componentFactory, ObjectLifecycle dependencyLifecycle)
@@ -128,7 +138,7 @@ namespace Pixytech.Core.IoC.Internal
                     .PropertiesAutowired();
             SetLifetimeScope(dependencyLifecycle,
                 (IRegistrationBuilder<object, IConcreteActivatorData, SingleRegistrationStyle>) registrationBuilder);
-            builder.Update(_container.ComponentRegistry);
+            UpdateBuilder(builder);
         }
 
         void IContainer.Configure<T>(Func<T> componentFactory, ObjectLifecycle dependencyLifecycle, bool propertyAutoWired)
@@ -149,7 +159,7 @@ namespace Pixytech.Core.IoC.Internal
             }
             SetLifetimeScope(dependencyLifecycle,
                 (IRegistrationBuilder<object, IConcreteActivatorData, SingleRegistrationStyle>)registrationBuilder);
-            builder.Update(_container.ComponentRegistry);
+            UpdateBuilder(builder);
         }
 
         /// <summary>
@@ -179,7 +189,7 @@ namespace Pixytech.Core.IoC.Internal
             {
                 lookupType
             }).PropertiesAutowired();
-            builder.Update(_container.ComponentRegistry);
+            UpdateBuilder(builder);
         }
 
         public bool HasComponent(Type componentType)

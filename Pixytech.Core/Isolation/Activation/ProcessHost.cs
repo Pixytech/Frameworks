@@ -10,6 +10,7 @@ namespace Pixytech.Core.Isolation.Activation
 {
     [Serializable]
     [SecurityPermission(SecurityAction.LinkDemand, ControlAppDomain = true, Infrastructure = true)]
+    [Obsolete("no more supported",true)]
     class ProcessHost : ActivationHost
     {
         private readonly CancellationTokenSource _cancellationTokenSource;

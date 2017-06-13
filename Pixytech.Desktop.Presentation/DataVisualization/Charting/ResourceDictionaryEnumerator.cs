@@ -214,7 +214,7 @@ namespace Pixytech.Desktop.Presentation.DataVisualization.Charting
         /// </summary>
         public void Reset()
         {
-            throw new NotSupportedException(Wpf.Presentation.Properties.Resources.ResourceDictionaryEnumerator_CantResetEnumeratorResetDispenserInstead);
+            throw new NotSupportedException(Desktop.Presentation.Properties.Resources.ResourceDictionaryEnumerator_CantResetEnumeratorResetDispenserInstead);
         }
 
         /// <summary>

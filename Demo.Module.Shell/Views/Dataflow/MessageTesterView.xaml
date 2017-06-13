@@ -1,0 +1,125 @@
+﻿<UserControl x:Class="Graphnet.Dashboard.CoreUI.Views.Dataflow.MessageTesterView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:gc="http://schemas.graphnethealth.com/presentation"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="424.52" d:DesignWidth="497.127">
+    <UserControl.Resources>
+
+    <Style TargetType="{x:Type xctk:PropertyGrid}">
+            <Style.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Foreground" Value="{DynamicResource Accent}"/>
+                </Style>
+                <Style TargetType="Grid">
+                    <Setter Property="Background" Value="{DynamicResource WindowBackground}"/>
+                </Style>
+                <Style TargetType="Expander">
+                    <Setter Property="Background" Value="Brown"/>
+                    <Setter Property="Foreground" Value="Brown"/>
+                </Style>
+            </Style.Resources>
+            <Setter Property="Background" Value="{DynamicResource WindowBackground}"/>
+        </Style>
+
+    </UserControl.Resources>
+    <gc:Interaction.Behaviors>
+        <gc:HostWindowBehavior>
+            <gc:HostWindowBehavior.WindowStyle>
+                <Style TargetType="{x:Type gc:ModernWindow}" BasedOn="{StaticResource {x:Type gc:ModernWindow}}" >
+                    <Setter Property="ResizeMode" Value="CanResizeWithGrip"/>
+                    <Setter Property="MinHeight" Value="300"/>
+                    <Setter Property="MinWidth" Value="500"/>
+                    <Setter Property="MaxHeight" Value="600"/>
+                    <Setter Property="MaxWidth" Value="800"/>
+                </Style>
+            </gc:HostWindowBehavior.WindowStyle>
+        </gc:HostWindowBehavior>
+    </gc:Interaction.Behaviors>
+    <Grid>
+       
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="Default message template" Margin="5"/>
+            <xctk:PropertyGrid  Grid.Row="1" Margin="5"
+                           SelectedObject="{Binding TemplateMessage,Mode=TwoWay}"  
+                           ShowPreview="False"
+                           ShowSearchBox="False"
+                           ShowSortOptions="False"
+                           ShowSummary="False"
+                           ShowTitle="False"
+                           ShowAdvancedOptions="False"
+                           UpdateTextBoxSourceOnEnterKey="True"
+                           MinHeight="100"
+                           MinWidth="150"
+                           Foreground="{StaticResource ButtonText}" 
+                           Background="{StaticResource WindowBackground}"  PreparePropertyItem="PropertyGrid_OnPreparePropertyItem">
+
+            </xctk:PropertyGrid>
+
+            <TextBlock Grid.Column="1" Grid.Row="0" Text="Template History" Margin="5"/>
+            <ListBox ScrollViewer.CanContentScroll="False" Grid.Row="1" Margin="5" Grid.Column="1" ItemsSource="{Binding History}" DisplayMemberPath="TemplateName" SelectedItem="{Binding SelectedHistory, Mode=TwoWay}"/>
+        </Grid>
+        
+        <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal">
+            <TextBlock  Text="Number of message to test" Margin="5"/>
+            <xctk:IntegerUpDown Grid.Row="1" Grid.Column="1"  VerticalAlignment="Center" Margin="5" Text="{Binding MessageCount,UpdateSourceTrigger=PropertyChanged}"  Minimum="0" Maximum="100" Width="100" HorizontalAlignment="Left" />
+        </StackPanel>
+       
+        <TextBlock Grid.Column="0" Grid.Row="3" Text="Messages" HorizontalAlignment="Left" Margin="5"/>
+        <TextBlock Grid.Column="0" Grid.Row="3" Text="Message Instance" HorizontalAlignment="Right" Margin="5"/>
+        <Grid Grid.Row="4" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ListBox DisplayMemberPath="DisplayName" MinWidth="200"  Margin="5" ItemsSource="{Binding Messages}" SelectedItem="{Binding SelectedMessage, Mode=TwoWay}">
+
+            </ListBox>
+            <xctk:PropertyGrid Margin="5"   Grid.Row="4" Grid.Column="1" 
+                                           SelectedObject="{Binding SelectedMessage.Message,Mode=TwoWay}" 
+                                           ShowPreview="False"
+                                           ShowSearchBox="False"
+                                           ShowSortOptions="False"
+                                           ShowSummary="False"
+                                           ShowTitle="False"
+                                            MinHeight="100"
+                                           MinWidth="150"
+                                           ShowAdvancedOptions="False"
+                                           UpdateTextBoxSourceOnEnterKey="True"
+                                           Foreground="{StaticResource ButtonText}" 
+                                           Background="{StaticResource WindowBackground}" 
+                                           PreparePropertyItem="PropertyGrid_OnPreparePropertyItem">
+
+            </xctk:PropertyGrid>
+        </Grid>
+
+        <TextBlock Grid.Row="5" Text="Template name" Margin="5"/>
+        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding TemplateName,UpdateSourceTrigger=PropertyChanged}" Width="150" Margin="5"/>
+        
+        <StackPanel  Grid.Column="1" Grid.Row="6"  Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0" VerticalAlignment="Bottom">
+            <gc:ModernButton IconData="{StaticResource Dashboard.Icon.Save}" Command="{Binding SaveTestCommand}" Content="Save &amp; Test" Margin="5"/>
+            <gc:ModernButton IconData="{StaticResource Dashboard.Icon.Save}" Command="{Binding TestCommand}" Content="Test" Margin="5"/>
+            <gc:ModernButton IconData="{StaticResource Dashboard.Icon.Cancel}" Command="{Binding CancelCommand}" Content="Cancel" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

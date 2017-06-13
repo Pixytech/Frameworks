@@ -109,7 +109,7 @@ namespace Pixytech.Desktop.Presentation.DataVisualization.Charting.Primitives
 
                 string message = string.Format(
                     CultureInfo.InvariantCulture,
-                    Wpf.Presentation.Properties.Resources.EdgePanel_OnEdgePropertyChanged,
+                    Desktop.Presentation.Properties.Resources.EdgePanel_OnEdgePropertyChanged,
                     value);
                  
                 throw new ArgumentException(message, "value");

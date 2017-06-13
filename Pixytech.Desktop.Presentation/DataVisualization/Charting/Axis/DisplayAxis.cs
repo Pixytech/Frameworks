@@ -110,7 +110,7 @@ namespace Pixytech.Desktop.Presentation.DataVisualization.Charting
             }
             else
             {
-                throw new InvalidOperationException(Wpf.Presentation.Properties.Resources.DisplayAxis_GetLength_CannotDetermineTheLengthOfAnAxisWithAnOrientationOfNone);
+                throw new InvalidOperationException(Desktop.Presentation.Properties.Resources.DisplayAxis_GetLength_CannotDetermineTheLengthOfAnAxisWithAnOrientationOfNone);
             }
         }
 
@@ -459,8 +459,10 @@ namespace Pixytech.Desktop.Presentation.DataVisualization.Charting
         /// <returns>The newly created tick mark.</returns>
         protected Line CreateTickMark(Style style)
         {
-            Line line = new Line();
-            line.Style = style;
+            Line line = new Line()
+            {
+                Style = style
+            };
             if (this.Orientation == AxisOrientation.Y)
             {
                 line.Y1 = 0.5;
@@ -518,10 +520,11 @@ namespace Pixytech.Desktop.Presentation.DataVisualization.Charting
 
             this.DependentAxisGrid = new Grid();
 
-            this.TitleLayoutTransformControl = new LayoutTransformControl();
-            this.TitleLayoutTransformControl.HorizontalAlignment = HorizontalAlignment.Center;
-            this.TitleLayoutTransformControl.VerticalAlignment = VerticalAlignment.Center;
-
+            this.TitleLayoutTransformControl = new LayoutTransformControl()
+            {
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center
+            };
             this.SizeChanged += new SizeChangedEventHandler(DisplayAxisSizeChanged);
         }
 

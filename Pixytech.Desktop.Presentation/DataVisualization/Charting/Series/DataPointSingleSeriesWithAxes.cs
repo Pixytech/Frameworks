@@ -165,7 +165,7 @@ namespace Pixytech.Desktop.Presentation.DataVisualization.Charting
         {
             if (!CustomTitleInUse && (null == GetBindingExpression(TitleProperty)))
             {
-                Title = newValue.HasValue ? string.Format(CultureInfo.CurrentCulture, Wpf.Presentation.Properties.Resources.Series_OnGlobalSeriesIndexPropertyChanged_UntitledSeriesFormatString, newValue.Value + 1) : null;
+                Title = newValue.HasValue ? string.Format(CultureInfo.CurrentCulture, Desktop.Presentation.Properties.Resources.Series_OnGlobalSeriesIndexPropertyChanged_UntitledSeriesFormatString, newValue.Value + 1) : null;
                 // Setting Title will set CustomTitleInUse; reset it now
                 CustomTitleInUse = false;
             }

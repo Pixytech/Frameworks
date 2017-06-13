@@ -50,7 +50,7 @@ namespace Pixytech.Desktop.Presentation.DataVisualization.Charting
                     rangeAxis.Orientation = AxisOrientation.X;
                     if (rangeAxis == null || rangeAxis.Origin == null)
                     {
-                        throw new InvalidOperationException(Wpf.Presentation.Properties.Resources.DataPointSeriesWithAxes_NoSuitableAxisAvailableForPlottingDependentValue);
+                        throw new InvalidOperationException(Desktop.Presentation.Properties.Resources.DataPointSeriesWithAxes_NoSuitableAxisAvailableForPlottingDependentValue);
                     }
                     DisplayAxis axis = rangeAxis as DisplayAxis;
                     if (axis != null)
@@ -81,7 +81,7 @@ namespace Pixytech.Desktop.Presentation.DataVisualization.Charting
             }
             else if (coordinateRange.Maximum.Unit != Unit.Pixels || coordinateRange.Minimum.Unit != Unit.Pixels)
             {
-                throw new InvalidOperationException(Wpf.Presentation.Properties.Resources.DataPointSeriesWithAxes_ThisSeriesDoesNotSupportRadialAxes);
+                throw new InvalidOperationException(Desktop.Presentation.Properties.Resources.DataPointSeriesWithAxes_ThisSeriesDoesNotSupportRadialAxes);
             }
 
             double minimum = (double)coordinateRange.Minimum.Value;

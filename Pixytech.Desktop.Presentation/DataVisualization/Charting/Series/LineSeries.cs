@@ -117,7 +117,7 @@ namespace Pixytech.Desktop.Presentation.DataVisualization.Charting
                     DisplayAxis axis = (DisplayAxis)CreateRangeAxisFromData(firstDataPoint.DependentValue);
                     if (axis == null)
                     {
-                        throw new InvalidOperationException(Wpf.Presentation.Properties.Resources.DataPointSeriesWithAxes_NoSuitableAxisAvailableForPlottingDependentValue);
+                        throw new InvalidOperationException(Desktop.Presentation.Properties.Resources.DataPointSeriesWithAxes_NoSuitableAxisAvailableForPlottingDependentValue);
                     }
                     axis.ShowGridLines = true;
                     axis.Orientation = AxisOrientation.Y;

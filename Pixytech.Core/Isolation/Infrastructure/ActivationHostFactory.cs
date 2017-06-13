@@ -18,10 +18,10 @@ namespace Pixytech.Core.Isolation.Infrastructure
                 return new AppDomainHost(pluginUnloaded);
             }
 
-            if (isolationLevel == IsolationLevel.Highest)
-            {
-                return new ProcessHost(pluginUnloaded);
-            }
+            //if (isolationLevel == IsolationLevel.Highest)
+            //{
+            //    return new ProcessHost(pluginUnloaded);
+            //}
 
             return null;
         }

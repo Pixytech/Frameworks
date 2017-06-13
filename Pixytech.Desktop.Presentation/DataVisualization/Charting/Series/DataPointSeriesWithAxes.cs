@@ -425,7 +425,7 @@ namespace Pixytech.Desktop.Presentation.DataVisualization.Charting
                     }
                     else
                     {
-                        throw new InvalidOperationException(Wpf.Presentation.Properties.Resources.DataPointSeriesWithAxes_GetAxes_AssignedIndependentAxisCannotBeUsed);
+                        throw new InvalidOperationException(Desktop.Presentation.Properties.Resources.DataPointSeriesWithAxes_GetAxes_AssignedIndependentAxisCannotBeUsed);
                     }
                 }
 
@@ -463,7 +463,7 @@ namespace Pixytech.Desktop.Presentation.DataVisualization.Charting
                     }
                     else
                     {
-                        throw new InvalidOperationException(Wpf.Presentation.Properties.Resources.DataPointSeriesWithAxes_GetAxes_AssignedDependentAxisCannotBeUsed);
+                        throw new InvalidOperationException(Desktop.Presentation.Properties.Resources.DataPointSeriesWithAxes_GetAxes_AssignedDependentAxisCannotBeUsed);
                     }
                 }
 
