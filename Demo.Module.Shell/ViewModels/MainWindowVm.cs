@@ -2,48 +2,38 @@
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Threading;
-using Graphnet.Core.IoC;
-using Graphnet.Core.Logging;
-using Graphnet.Dashboard.Wpf.Presentation.Infrastructure;
-using Graphnet.Dashboard.Wpf.Presentation.Infrastructure.ExceptionManagement;
-using Graphnet.Dashboard.Wpf.Presentation.Infrastructure.Services;
-using Graphnet.Dashboard.Wpf.Presentation.Infrastructure.Services.LiveFeed;
-using Graphnet.Wpf.Presentation.Infrastructure;
-using Graphnet.Wpf.Presentation.Infrastructure.Commands;
-using Graphnet.Wpf.Presentation.Infrastructure.Services.Interfaces;
-using Graphnet.Wpf.Presentation.Infrastructure.Settings;
-using Graphnet.Wpf.Presentation.Services;
-using Microsoft.Practices.Prism.PubSubEvents;
 
-namespace Graphnet.Dashboard.CoreUI.ViewModels
+using Microsoft.Practices.Prism.PubSubEvents;
+using Pixytech.Desktop.Presentation.Infrastructure;
+using Pixytech.Core.Logging;
+using Pixytech.Desktop.Presentation.Infrastructure.Services.Interfaces;
+using Pixytech.Desktop.Presentation.Infrastructure.Settings;
+using Demo.Presentation.Infrastructure.Services;
+using Pixytech.Desktop.Presentation.Infrastructure.Commands;
+using Pixytech.Core.IoC;
+using System.Threading;
+
+namespace Demo.Module.Shell.ViewModels
 {
     class MainWindowVm : ViewModelBase
     {
         private readonly ILog _logger = LogManager.GetLogger(typeof(MainWindowVm));
-        private readonly IErrorContainer _errorContainer;
-        private DispatcherTimer _hideTimer;
-        private readonly IDialogService _dialogService;
-        private readonly ErrorWindowVm _errorWindowViewModel;
-        private readonly IThemeService _themeService;
-        private SubscriptionToken _errorSubscription;
-        private readonly IMessageFeedService _messageFeedService;
-        private readonly ISettingsProvider _settingsProvider;
-        
-        public MainWindowVm(IErrorContainer errorContainer, 
+        private ISettingsProvider _settingsProvider;
+        private IDialogService _dialogService;
+        private IThemeService _themeService;
+
+        public MainWindowVm(
             IDialogService dialogService, 
-            ErrorWindowVm errorWindowViewModel,
             IThemeService themeService, 
-            IMessageFeedService messageFeedService, 
+            
             ISettingsProvider settingsProvider,
             IRemoteModulesCatalog remoteModulesCatalog)
         {
             _settingsProvider = settingsProvider;
-            _messageFeedService = messageFeedService;
             _dialogService = dialogService;
-            _errorWindowViewModel = errorWindowViewModel;
-            _errorContainer = errorContainer;
+          
             _themeService = themeService;
-            ErrorWindowCommand = new DelegateCommand(OnShowErrorWindow, () => _errorContainer.HasErrors);
+            ErrorWindowCommand = new DelegateCommand(OnShowErrorWindow);
             SettingsCommand = new DelegateCommand(OnShowSettings);
             LogonDetailsCommand = new DelegateCommand(OnShowLogonDetails);
             HasModules = remoteModulesCatalog.Modules.Count() > 1;
@@ -64,40 +54,25 @@ namespace Graphnet.Dashboard.CoreUI.ViewModels
 
         private void OnShowLogonDetails()
         {
-            var logonDetailsViewModel = ObjectFactory.Builder.Build<LogonDetailsWindowVm>();
-            _dialogService.ShowDialog(logonDetailsViewModel, new DialogOptions { ActivateParentAfterClose = true, AutoHideHeader = false, IsHeaderVisible = true, IsTitleVisible = true, Title = "Logon Details" });
+           
         }
 
         protected override async Task OnInitialize()
         {
-            _errorSubscription = _errorContainer.SubscribeOnError(e =>
+            Task.Run(() =>
             {
-                _logger.ErrorFormat("ErrorContainer recieved error {0}", e);
-                OnPropertyChanged(() => Container);
-                LastException = e;
-                RecentErrorRecieved = true;
-                if (_hideTimer != null)
+                while (true)
                 {
-                    _hideTimer.Stop();
+                    Message = DateTime.Now.Ticks.ToString();
+                    Thread.Sleep(TimeSpan.FromSeconds(20));
                 }
-                _hideTimer = new DispatcherTimer(TimeSpan.FromSeconds(3), DispatcherPriority.Background, (s, ex) =>
-                {
-                    _hideTimer.Stop();
-                    RecentErrorRecieved = false;
-
-                }, Dispatcher.CurrentDispatcher);
-                _hideTimer.Start();
-
-                ErrorWindowCommand.RaiseCanExecuteChanged();
             });
-
-           await _messageFeedService.ConnectAsync();
+            await Task.CompletedTask;
         }
 
         protected override void OnCleanup()
         {
-            _messageFeedService.Stop();
-            _errorSubscription.Dispose();
+          
         }
 
         private void OnShowSettings()
@@ -129,7 +104,7 @@ namespace Graphnet.Dashboard.CoreUI.ViewModels
 
         private void OnShowErrorWindow()
         {
-            _dialogService.ShowDialog(_errorWindowViewModel, new DialogOptions { ActivateParentAfterClose = true, AutoHideHeader = false, IsHeaderVisible = true, IsTitleVisible = true, Title = "Recent Errors" });
+            
         }
 
         public DelegateCommand ErrorWindowCommand { get; set; }
@@ -155,17 +130,26 @@ namespace Graphnet.Dashboard.CoreUI.ViewModels
             }
         }
 
+        public string Message
+        {
+            get { return GetProperty<string>(); }
+            set
+            {
+                SetProperty(value);
+                OnPropertyChanged(() => Message);
+            }
+        }
+
         public bool ShowNoModulesUi
         {
             get { return !HasModules; }
         }
 
        
-
-        public IErrorContainer Container
-        {
-            get { return _errorContainer; }
-        }
+        //   public IErrorContainer Container
+        //{
+        //    get { return _errorContainer; }
+        //}
 
         public DelegateCommand SettingsCommand { get; private set; }
 

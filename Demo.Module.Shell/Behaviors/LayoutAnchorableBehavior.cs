@@ -5,7 +5,7 @@ using Pixytech.Desktop.Presentation.Behaviors;
 using Pixytech.Desktop.Presentation.AvalonDock.Controls;
 using Pixytech.Desktop.Presentation.Utilities;
 
-namespace Graphnet.Dashboard.CoreUI.Behaviors
+namespace Demo.Module.Shell.Behaviors
 {
     public class LayoutAnchorableBehavior : BehaviorBase<FrameworkElement>
     {

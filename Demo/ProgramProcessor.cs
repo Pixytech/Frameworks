@@ -91,7 +91,7 @@ namespace Demo
                     //    }
                     //    break;
                 //    case "uninstall":
-                //        _splashViewModel.Message = "Removing graphnet dashboard ..";
+                //        _splashViewModel.Message = "Removing Demo dashboard ..";
                 //        installManager.UnInstall(command.Argument);
                 //        DelayDeleteSelf();
                 //        _splashViewModel.ShutDown();

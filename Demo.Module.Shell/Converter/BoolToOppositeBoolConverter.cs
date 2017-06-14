@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Data;
 
-namespace Graphnet.Dashboard.CoreUI.Converter
+namespace Demo.Module.Shell.Converter
 {
     public class BoolToOppositeBoolConverter : IValueConverter
     {

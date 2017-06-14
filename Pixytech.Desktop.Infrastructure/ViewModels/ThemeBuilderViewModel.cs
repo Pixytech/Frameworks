@@ -6,7 +6,7 @@ using Pixytech.Desktop.Presentation.Infrastructure;
 using Pixytech.Desktop.Presentation.Infrastructure.Commands;
 using Pixytech.Desktop.Presentation.Infrastructure.Services.Interfaces;
 
-namespace Pixytech.Desktop.Presentation.ViewModels
+namespace Pixytech.Desktop.Presentation.Infrastructure.ViewModels
 {
     /// <summary>
     /// A simple view model for configuring theme, font and accent colors.

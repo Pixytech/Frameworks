@@ -1,19 +1,20 @@
-﻿<UserControl x:Class="Graphnet.Dashboard.CoreUI.Views.MainWindow"
+﻿<UserControl x:Class="Demo.Module.Shell.Views.MainWindow"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:gc="http://schemas.graphnethealth.com/presentation"
-             xmlns:gcad="http://schemas.graphnethealth.com/presentation/avalondock"
              xmlns:regions="http://www.codeplex.com/CompositeWPF"
-             xmlns:infrastructure="http://www.graphnethealth.com/infrastructure"
-             xmlns:res="clr-namespace:Graphnet.Dashboard.CoreUI.Resources"
+            
+             xmlns:res="clr-namespace:Demo.Module.Shell.Resources"
+             xmlns:gc="http://www.pixytech.com/presentation"
+             xmlns:cinf="http://www.demo.com/infrastructure"
+              
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     
     <UserControl.Resources>
         <ResourceDictionary>
-            <gcad:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+            <gc:BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
         </ResourceDictionary>
     </UserControl.Resources>
     <gc:Interaction.Behaviors>
@@ -23,7 +24,7 @@
                     <Setter Property="MinHeight" Value="400"/>
                     <Setter Property="DataContext" Value="{Binding ElementName=ShellMainWindow, Path=Content.DataContext}"/>
                     <Setter Property="MinWidth" Value="800"/>
-                    <Setter Property="Title" Value="Graphnet Service Dashboard"/>
+                    <Setter Property="Title" Value="Demo Service Dashboard"/>
                     <Setter Property="WindowStyle" Value="SingleBorderWindow"/>
                     <Setter Property="IsTitleVisible" Value="False"/>
                     <Setter Property="LogoData" Value="{x:Null}"/>
@@ -69,9 +70,9 @@
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="50,0,0,0">
                                     <Viewbox Margin="1" Height="30">
-                                        <ContentControl Template="{StaticResource Dashboard.Icon.GraphnetRings}"/>
+                                        <ContentControl Template="{StaticResource Dashboard.Icon.DemoRings}"/>
                                     </Viewbox>
-                                    <TextBlock Margin="5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource Heading2}" Text="Graphnet Service Dashboard"/>
+                                    <TextBlock Margin="5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource Heading2}" Text="Demo Service Dashboard"/>
                                 </StackPanel>
 
                                 <StackPanel Orientation="Horizontal" Grid.Column="2" WindowChrome.IsHitTestVisibleInChrome="True" HorizontalAlignment="Right" >
@@ -102,58 +103,40 @@
     </gc:Interaction.Behaviors>
 
     <Grid>
-        <Grid Visibility="{Binding ShowNoModulesUi,Converter={StaticResource BoolToVisibilityConverter}}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50">
-            <StackPanel>
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,50,0,0">
-                    <Viewbox Margin="1" Height="130">
-                        <ContentControl Template="{StaticResource Dashboard.Icon.GraphnetRings}"/>
-                    </Viewbox>
-                    <TextBlock Margin="5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource Heading1}" >
-                        <TextBlock.Inlines>
-                            <Run Text="Graphnet Health Ltd"/>
-                            <LineBreak/>
-                            <Run Text=" Service dashboard" FontSize="12"/>
-                        </TextBlock.Inlines>
-                    </TextBlock>
-                </StackPanel>
-
-                <TextBlock Text="It seams that no feature are installed on dashboard server or you may not have premission to use the tool." Style="{StaticResource Heading3}" />
-                <TextBlock Text="Please contact graphnet service representive or contact your local IT Helpdesk" Style="{StaticResource Heading3}"/>
-            </StackPanel>
-        </Grid>
-    
-        <gcad:DockingManager Visibility="{Binding HasModules,Converter={StaticResource BoolToVisibilityConverter}}" Margin="0,0,0,0" Background="Transparent" AllowMixedOrientation="True" regions:RegionManager.RegionName="{x:Static infrastructure:RegionNames.MainRegion}">
-            <gcad:DockingManager.LayoutItemContainerStyle>
-                <Style TargetType="{x:Type gcad:LayoutItem}">
+       
+        <TextBlock FontSize="32" Text="{Binding Message}"/>
+        <!--<gc:DockingManager Visibility="{Binding HasModules,Converter={StaticResource BoolToVisibilityConverter}}" Margin="0,0,0,0" Background="Transparent" AllowMixedOrientation="True" regions:RegionManager.RegionName="{x:Static cinf:RegionNames.MainRegion}">
+            <gc:DockingManager.LayoutItemContainerStyle>
+                <Style TargetType="{x:Type gc:LayoutItem}">
                     <Setter Property="Title" Value="{Binding Model.Title}" />
                 </Style>
-            </gcad:DockingManager.LayoutItemContainerStyle>
-            <gcad:DockingManager.Theme>
-                <gcad:ModernTheme/>
-            </gcad:DockingManager.Theme>
-            <gcad:LayoutRoot>
-                <gcad:LayoutPanel Orientation="Vertical">
-                    <gcad:LayoutAnchorablePaneGroup DockHeight="150" >
-                        <gcad:LayoutAnchorablePane >
-                            <gcad:LayoutAnchorable   x:Name="MatrixLayoutAnchorable" ContentId="MatrixLayout" Title="Live Matrix" CanClose="False" CanHide="True" CanAutoHide="True"  >
-                                <ContentControl regions:RegionManager.RegionName="{x:Static res:LocalRegionNames.HostMatrixRegion}"  VerticalAlignment="Stretch" Height="120"/>
-                            </gcad:LayoutAnchorable>
-                        </gcad:LayoutAnchorablePane>
-                    </gcad:LayoutAnchorablePaneGroup>
-                    <gcad:LayoutPanel Orientation="Horizontal"  >
-                        <gcad:LayoutAnchorablePaneGroup DockWidth="200" >
-                            <gcad:LayoutAnchorablePane >
-                                <gcad:LayoutAnchorable  x:Name="QuickLaunchLayoutAnchorable" ContentId="QauickLaunch" FloatingWidth="200" Title="Quick Launch" CanHide="True" CanClose="False" AutoHideWidth="200">
+            </gc:DockingManager.LayoutItemContainerStyle>
+            <gc:DockingManager.Theme>
+                <gc:ModernTheme/>
+            </gc:DockingManager.Theme>
+            <gc:LayoutRoot>
+                <gc:LayoutPanel Orientation="Vertical">
+                    <gc:LayoutAnchorablePaneGroup DockHeight="150" >
+                        <gc:LayoutAnchorablePane >
+                            <gc:LayoutAnchorable   x:Name="MatrixLayoutAnchorable" ContentId="MatrixLayout" Title="Live Matrix" CanClose="False" CanHide="True" CanAutoHide="True"  >
+                                --><!--<ContentControl regions:RegionManager.RegionName="{x:Static res:LocalRegionNames.HostMatrixRegion}"  VerticalAlignment="Stretch" Height="120"/>--><!--
+                            </gc:LayoutAnchorable>
+                        </gc:LayoutAnchorablePane>
+                    </gc:LayoutAnchorablePaneGroup>
+                    <gc:LayoutPanel Orientation="Horizontal"  >
+                        <gc:LayoutAnchorablePaneGroup DockWidth="200" >
+                            <gc:LayoutAnchorablePane >
+                                <gc:LayoutAnchorable  x:Name="QuickLaunchLayoutAnchorable" ContentId="QauickLaunch" FloatingWidth="200" Title="Quick Launch" CanHide="True" CanClose="False" AutoHideWidth="200">
                                     <ContentControl regions:RegionManager.RegionName="{x:Static res:LocalRegionNames.HostQuickLaunchRegion}" Margin="4,0"/>
-                                </gcad:LayoutAnchorable>
-                            </gcad:LayoutAnchorablePane>
-                        </gcad:LayoutAnchorablePaneGroup>
-                        <gcad:LayoutDocumentPaneGroup>
-                            <gcad:LayoutDocumentPane />
-                        </gcad:LayoutDocumentPaneGroup>
-                    </gcad:LayoutPanel>
-                </gcad:LayoutPanel>
-            </gcad:LayoutRoot>
-        </gcad:DockingManager>
+                                </gc:LayoutAnchorable>
+                            </gc:LayoutAnchorablePane>
+                        </gc:LayoutAnchorablePaneGroup>
+                        <gc:LayoutDocumentPaneGroup>
+                            <gc:LayoutDocumentPane />
+                        </gc:LayoutDocumentPaneGroup>
+                    </gc:LayoutPanel>
+                </gc:LayoutPanel>
+            </gc:LayoutRoot>
+        </gc:DockingManager>-->
     </Grid>
 </UserControl>

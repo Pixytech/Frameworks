@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace Graphnet.Dashboard.CoreUI.Converter
+namespace Demo.Module.Shell.Converter
 {
     public class UriToStringConverter : IValueConverter
     {

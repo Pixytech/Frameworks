@@ -15,7 +15,7 @@ namespace Demo.Installer
                 var protocol = Registry.CurrentUser.CreateSubKey("Software\\Classes\\dashApp");
                 if (protocol != null)
                 {
-                    protocol.SetValue(string.Empty, "URL:graphnet dashboard application protocol");
+                    protocol.SetValue(string.Empty, "URL:Demo dashboard application protocol");
                     protocol.SetValue("URL Protocol", string.Empty);
                     var shell = protocol.CreateSubKey("shell");
                     if (shell != null)

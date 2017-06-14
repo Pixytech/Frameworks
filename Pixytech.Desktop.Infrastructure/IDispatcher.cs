@@ -3,6 +3,7 @@ using System.Windows.Threading;
 
 namespace Pixytech.Desktop.Presentation.Infrastructure
 {
+    [Obsolete()]
     public interface IDispatcher
     {
         void Invoke(Delegate callback);

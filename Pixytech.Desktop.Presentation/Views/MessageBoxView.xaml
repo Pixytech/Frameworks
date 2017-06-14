@@ -8,7 +8,8 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
         <converters:IsValidEnumConverter x:Key="IsValidEnumConverter"/>
-        <Style TargetType="{x:Type Button}" x:Key="BaseStyle" BasedOn="{StaticResource BaseButtonStyle}" >
+        <!--BasedOn="{DynamicResource BaseButtonStyle}"-->
+        <Style TargetType="{x:Type Button}" x:Key="BaseStyle">
             <Setter Property="Margin" Value="2"/>
             <Setter Property="Width" Value="80"/>
             <Setter Property="Visibility" Value="Collapsed"/>

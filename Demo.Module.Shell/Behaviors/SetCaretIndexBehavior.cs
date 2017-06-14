@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Pixytech.Desktop.Presentation.Behaviors;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using Graphnet.Wpf.Presentation.Behaviors;
 
-namespace Graphnet.Dashboard.CoreUI.Behaviors
+
+namespace Demo.Module.Shell.Behaviors
 {
     public class SetCaretIndexBehavior : BehaviorBase<TextBox>
     {

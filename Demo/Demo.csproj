@@ -157,6 +157,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Demo.Module.Shell\Demo.Module.Shell.csproj">
+      <Project>{a4cd97d6-d1cd-40b1-84e7-2de2d6dedecb}</Project>
+      <Name>Demo.Module.Shell</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Demo.Presentation.Infrastructure\Demo.Presentation.Infrastructure.csproj">
       <Project>{199E7C98-872A-4A96-BB21-A4F65952F495}</Project>
       <Name>Demo.Presentation.Infrastructure</Name>

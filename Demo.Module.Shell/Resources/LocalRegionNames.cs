@@ -1,4 +1,4 @@
-﻿namespace Graphnet.Dashboard.CoreUI.Resources
+﻿namespace Demo.Module.Shell.Resources
 {
     internal class LocalRegionNames
     {

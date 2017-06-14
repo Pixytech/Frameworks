@@ -36,7 +36,7 @@ namespace Demo.Presentation.Infrastructure
                 IsFirstRun = true;
                 TimeOfLastUpdateCheck = DateTime.Now;
                 UpdatedApplicationFullName =
-                    "http://localhost/demo/demo.application#demo.application, Version=1.0.0.49, Culture=neutral, PublicKeyToken=7757227a2641d1ab, processorArchitecture=msil/Graphnet.Dashboard.exe, Version=1.0.0.49, Culture=neutral, PublicKeyToken=7757227a2641d1ab, processorArchitecture=msil, type=win32";
+                    "http://localhost/demo/demo.application#demo.application, Version=1.0.0.49, Culture=neutral, PublicKeyToken=7757227a2641d1ab, processorArchitecture=msil/Demo.Dashboard.exe, Version=1.0.0.49, Culture=neutral, PublicKeyToken=7757227a2641d1ab, processorArchitecture=msil, type=win32";
                 UpdatedVersion = Assembly.GetEntryAssembly().GetName().Version;
 
             }

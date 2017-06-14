@@ -1,4 +1,4 @@
-﻿namespace Graphnet.Dashboard.CoreUI.Views
+﻿namespace Demo.Module.Shell.Views
 {
     /// <summary>
     /// Interaction logic for WelcomePage.xaml

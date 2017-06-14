@@ -54,6 +54,8 @@ namespace Demo.Helpers
             _splashViewModel.Message = "Downloading modules ...";
             var builder = ObjectFactory.Builder.Build<IRemoteModuleManager>();
             builder.DownloadModules(OnFinishedDownload);
+            // we dont have remote module as o now
+            OnFinishedDownload(null);
             _application.Run();
         }
 

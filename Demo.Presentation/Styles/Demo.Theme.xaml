@@ -62,7 +62,7 @@
 
     <Geometry x:Key="Dashboard.Icon.CellDown">F1 M 14,25L 14,52L 40,52L 40,36L 46,36L 46,25L 14,25 Z M 43,33L 17,33L 17,28L 43,28L 43,33 Z M 37,36L 37,41L 17,41L 17,36L 37,36 Z M 37,44L 37,49L 17,49L 17,44L 37,44 Z M 57,28L 49,28L 49,33L 52,33L 52,44.25L 46,38.25L 46,43.75L 54.5,52.25L 63,43.75L 63,38.25L 57,44.25L 57,28 Z</Geometry>
 
-    <ControlTemplate x:Key="Dashboard.Icon.Graphnet">
+    <ControlTemplate x:Key="Dashboard.Icon.Demo">
         <ContentControl>
             <Viewbox Stretch="UniformToFill"   Width="8265.86" Height="2880">
                 <Canvas Width="8265.86" Height="2880"  RenderTransformOrigin="0.5,0.5">
@@ -116,7 +116,7 @@
         </ContentControl>
     </ControlTemplate>
 
-    <ControlTemplate x:Key="Dashboard.Icon.GraphnetRings">
+    <ControlTemplate x:Key="Dashboard.Icon.DemoRings">
         <ContentControl>
             <Viewbox Stretch="UniformToFill"   Width="2229.86" Height="2280" >
                 <Canvas Width="2229.86" Height="2280"  RenderTransformOrigin="0.5,0.5">

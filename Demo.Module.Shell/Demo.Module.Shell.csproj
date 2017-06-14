@@ -69,236 +69,11 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ViewModels\AboutVm.cs" />
-    <Compile Include="ViewModels\ComponentBuilder.cs" />
-    <Compile Include="ViewModels\Dataflow\DataflowExceptionsVm.cs" />
-    <Compile Include="ViewModels\Dataflow\DataflowVm.cs" />
-    <Compile Include="ViewModels\Dataflow\EditorContext.cs" />
-    <Compile Include="ViewModels\Dataflow\Editors\Dialogs\AddToRuleSetVm.cs" />
-    <Compile Include="ViewModels\Dataflow\Editors\Ruleset\IRuleOptionsVm.cs" />
-    <Compile Include="ViewModels\Dataflow\Editors\Ruleset\RuleOptionVm.cs" />
-    <Compile Include="ViewModels\Dataflow\Editors\Ruleset\RuleSetEditorVm.cs" />
-    <Compile Include="ViewModels\Dataflow\Editors\SendEmail\AggregatedRecipient.cs" />
-    <Compile Include="ViewModels\Dataflow\Editors\SendEmail\ContextData.cs" />
-    <Compile Include="ViewModels\Dataflow\Editors\SendEmail\ISendEmailOptionsVm.cs" />
-    <Compile Include="ViewModels\Dataflow\Editors\SendEmail\SendEmailEditorVm.cs" />
-    <Compile Include="ViewModels\Dataflow\Editors\SendEmail\SendEmailOptionsVm.cs" />
-    <Compile Include="ViewModels\Dataflow\Editors\SendEmail\SendEmailRecipientDialogVm.cs" />
-    <Compile Include="ViewModels\Dataflow\MessageTesterVm.cs" />
-    <Compile Include="ViewModels\Dataflow\MiddlewareSelectorVm.cs" />
-    <Compile Include="ViewModels\Dataflow\RuleEditorVm.cs" />
-    <Compile Include="ViewModels\Dataflow\SegmentVariableProvider.cs" />
-    <Compile Include="ViewModels\Dataflow\TestHistoryData.cs" />
-    <Compile Include="ViewModels\Dataflow\TestHistoryModel.cs" />
-    <Compile Include="ViewModels\Dataflow\VariableType.cs" />
-    <Compile Include="ViewModels\Dataflow\VariableVm.cs" />
-    <Compile Include="ViewModels\Dataflow\WorkflowEditorVm.cs" />
-    <Compile Include="ViewModels\ErrorWindowVm.cs" />
-    <Compile Include="ViewModels\IComponentBuilder.cs" />
-    <Compile Include="ViewModels\ISystemAboutPage.cs" />
-    <Compile Include="ViewModels\LauncherVm.cs" />
-    <Compile Include="ViewModels\LogonDetailsWindow.cs" />
-    <Compile Include="ViewModels\MainWindowVm.cs" />
-    <Compile Include="ViewModels\MatrixVm.cs" />
-    <Compile Include="ViewModels\Security\AccessRuleEditorVm.cs" />
-    <Compile Include="ViewModels\Security\PatternEditWindowVm.cs" />
-    <Compile Include="ViewModels\Security\RoleDetailsWindowVm.cs" />
-    <Compile Include="ViewModels\Security\RuleDetailsWindowVm.cs" />
-    <Compile Include="ViewModels\Security\SecurityRolesVm.cs" />
-    <Compile Include="ViewModels\Security\SecurityRulesVm.cs" />
-    <Compile Include="ViewModels\Security\SecurityVm.cs" />
-    <Compile Include="ViewModels\Security\StringValueEditorVm.cs" />
-    <Compile Include="ViewModels\Security\WebResourceValuesProvider.cs" />
-    <Compile Include="ViewModels\ThemeSettings.cs" />
-    <Compile Include="ViewModels\WelcomeVm.cs" />
-    <Compile Include="Views\About.xaml.cs">
-      <DependentUpon>About.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Dataflow\DataflowView.xaml.cs">
-      <DependentUpon>DataflowView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Dataflow\Editors\Dialogs\AddToRuleSetView.xaml.cs">
-      <DependentUpon>AddToRuleSetView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Dataflow\Editors\Ruleset\RuleSetEditorView.xaml.cs">
-      <DependentUpon>RuleSetEditorView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Dataflow\Editors\SendEmail\SendEmailEditorView.xaml.cs">
-      <DependentUpon>SendEmailEditorView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Dataflow\Editors\SendEmail\SendEmailRecipientDialogView.xaml.cs">
-      <DependentUpon>SendEmailRecipientDialogView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Dataflow\MessageTesterView.xaml.cs">
-      <DependentUpon>MessageTesterView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Dataflow\MiddlewareSelectorView.xaml.cs">
-      <DependentUpon>MiddlewareSelectorView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Dataflow\RuleEditorView.xaml.cs">
-      <DependentUpon>RuleEditorView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Dataflow\VariableView.xaml.cs">
-      <DependentUpon>VariableView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Dataflow\WorkflowEditorView.xaml.cs">
-      <DependentUpon>WorkflowEditorView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ErrorWindow.xaml.cs">
-      <DependentUpon>ErrorWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\LauncherView.xaml.cs">
-      <DependentUpon>LauncherView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\LogonDetailsWindow.xaml.cs">
-      <DependentUpon>LogonDetailsWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MatrixView.xaml.cs">
-      <DependentUpon>MatrixView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Security\AccessRuleEditorWindow.xaml.cs">
-      <DependentUpon>AccessRuleEditorWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Security\PatternEditWindow.xaml.cs">
-      <DependentUpon>PatternEditWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Security\RoleDetailsWindow.xaml.cs">
-      <DependentUpon>RoleDetailsWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Security\RuleDetailsWindow.xaml.cs">
-      <DependentUpon>RuleDetailsWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Security\SecurityRolesView.xaml.cs">
-      <DependentUpon>SecurityRolesView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Security\SecurityRulesView.xaml.cs">
-      <DependentUpon>SecurityRulesView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Security\SecurityView.xaml.cs">
-      <DependentUpon>SecurityView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Security\StringValueEditorWindow.xaml.cs">
-      <DependentUpon>StringValueEditorWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\WelcomePage.xaml.cs">
-      <DependentUpon>WelcomePage.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Resources\ViewMappings.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="Behaviors\LayoutAnchorableBehavior.cs" />
     <Compile Include="Behaviors\PasswordBehavior.cs" />
     <Compile Include="Behaviors\SetCaretIndexBehavior.cs" />
     <Compile Include="Converter\BoolToOppositeBoolConverter.cs" />
     <Compile Include="Converter\UriToStringConverter.cs" />
-    <Compile Include="Resources\LocalRegionNames.cs" />
-    <Compile Include="ShellModule.cs" />
-    <Page Include="Views\About.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Dataflow\DataflowView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Dataflow\Editors\Dialogs\AddToRuleSetView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Dataflow\Editors\Ruleset\RuleSetEditorView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Dataflow\Editors\SendEmail\SendEmailEditorView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Dataflow\Editors\SendEmail\SendEmailRecipientDialogView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Dataflow\MessageTesterView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Dataflow\MiddlewareSelectorView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Dataflow\RuleEditorView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Dataflow\VariableView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Dataflow\WorkflowEditorView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\ErrorWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\LauncherView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\LogonDetailsWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\MatrixView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Security\AccessRuleEditorWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Security\PatternEditWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Security\RoleDetailsWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Security\RuleDetailsWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Security\SecurityRolesView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Security\SecurityRulesView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Security\SecurityView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Security\StringValueEditorWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\WelcomePage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -312,6 +87,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Resources\LocalRegionNames.cs" />
+    <Compile Include="ShellModule.cs" />
+    <Compile Include="ViewModels\MainWindowVm.cs" />
+    <Compile Include="ViewModels\ThemeSettings.cs" />
+    <Compile Include="ViewModels\WelcomeVm.cs" />
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WelcomePage.xaml.cs">
+      <DependentUpon>WelcomePage.xaml</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -321,9 +107,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Resources\ViewMappings.xaml.orig" />
-    <None Include="ViewModels\Dataflow\Editors\Ruleset\RuleSetEditorVm.cs.orig" />
-    <None Include="Views\Dataflow\Editors\SendEmail\SendEmailEditorView.xaml.orig" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Demo.Presentation.Infrastructure\Demo.Presentation.Infrastructure.csproj">
@@ -346,6 +129,20 @@
       <Project>{9d679b46-3629-4143-b77f-abd6e0ac4490}</Project>
       <Name>Pixytech.Desktop.Presentation</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Resources\ViewMappings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WelcomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\App dashboard.ico" />

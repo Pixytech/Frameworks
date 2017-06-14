@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using Pixytech.Desktop.Presentation.Infrastructure;
 using Pixytech.Desktop.Presentation.Infrastructure.Services.Interfaces;
-using Pixytech.Desktop.Presentation.ViewModels;
+using Pixytech.Desktop.Presentation.Infrastructure.ViewModels;
 
 namespace Pixytech.Desktop.Presentation.Services
 {

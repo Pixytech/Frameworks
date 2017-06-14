@@ -1,8 +1,8 @@
 ﻿using System.Windows;
-using Graphnet.Core.IoC;
 using Microsoft.Practices.Prism.Regions;
+using Pixytech.Core.IoC;
 
-namespace Graphnet.Dashboard.CoreUI.Views
+namespace Demo.Module.Shell.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -42,26 +42,26 @@ namespace Graphnet.Dashboard.CoreUI.Views
 
         private void ToggleMatrixLayoutAnchorable(object sender, RoutedEventArgs e)
         {
-            if (MatrixLayoutAnchorable.IsHidden)
-            {
-                MatrixLayoutAnchorable.Show();
-            }
-            else
-            {
-                MatrixLayoutAnchorable.Hide();
-            }
+            //if (MatrixLayoutAnchorable.IsHidden)
+            //{
+            //    MatrixLayoutAnchorable.Show();
+            //}
+            //else
+            //{
+            //    MatrixLayoutAnchorable.Hide();
+            //}
         }
 
         private void ToggleQuickLaunchLayoutAnchorable(object sender, RoutedEventArgs e)
         {
-            if (QuickLaunchLayoutAnchorable.IsHidden)
-            {
-                QuickLaunchLayoutAnchorable.Show();
-            }
-            else
-            {
-                QuickLaunchLayoutAnchorable.Hide();
-            }
+            //if (QuickLaunchLayoutAnchorable.IsHidden)
+            //{
+            //    QuickLaunchLayoutAnchorable.Show();
+            //}
+            //else
+            //{
+            //    QuickLaunchLayoutAnchorable.Hide();
+            //}
         }
 
         private void ToggleStatusBar(object sender, RoutedEventArgs e)

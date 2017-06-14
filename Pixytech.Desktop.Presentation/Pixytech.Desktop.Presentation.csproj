@@ -350,7 +350,7 @@
     <Compile Include="DataVisualization\ValueHelper.cs" />
     <Compile Include="DataVisualization\WeakEventListener.cs" />
     <Compile Include="DataVisualization\WeakReferenceBag.cs" />
-    <Compile Include="DependencyInjection\PresentationRegistry.cs" />
+    <Compile Include="DependencyInjection\PresentationModule.cs" />
     <Compile Include="Helpers\DefaultClipboard.cs" />
     <Compile Include="Helpers\DpiInformation.cs" />
     <Compile Include="Helpers\IClipboard.cs" />
@@ -383,8 +383,6 @@
     <Compile Include="Services\Theme.cs" />
     <Compile Include="Services\ThemeService.cs" />
     <Compile Include="Utilities\VisualTreeHelperEx.cs" />
-    <Compile Include="ViewModels\MessageBoxViewModel.cs" />
-    <Compile Include="ViewModels\ThemeBuilderViewModel.cs" />
     <Compile Include="Views\MessageBoxView.xaml.cs">
       <DependentUpon>MessageBoxView.xaml</DependentUpon>
     </Compile>

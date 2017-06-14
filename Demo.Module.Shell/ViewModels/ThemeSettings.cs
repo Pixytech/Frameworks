@@ -1,6 +1,6 @@
-﻿using Graphnet.Wpf.Presentation.Infrastructure.Services.Interfaces;
+﻿using Pixytech.Desktop.Presentation.Infrastructure.Services.Interfaces;
 
-namespace Graphnet.Dashboard.CoreUI.ViewModels
+namespace Demo.Module.Shell.ViewModels
 {
     public class ThemeSettings
     {

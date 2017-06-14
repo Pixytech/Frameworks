@@ -1,7 +1,6 @@
 ﻿using Pixytech.Core.IoC;
 using Pixytech.Desktop.Presentation.Helpers;
 using Pixytech.Desktop.Presentation.Services;
-using Pixytech.Desktop.Presentation.ViewModels;
 
 namespace Pixytech.Desktop.Presentation.DependancyInjection
 {
@@ -14,8 +13,6 @@ namespace Pixytech.Desktop.Presentation.DependancyInjection
             configurer.ConfigureType<MessagBoxService>(ObjectLifecycle.SingleInstance);
             configurer.ConfigureType<DialogService>(ObjectLifecycle.SingleInstance);
             configurer.ConfigureType<ThemeService>(ObjectLifecycle.SingleInstance);
-            configurer.ConfigureType<ThemeBuilderViewModel>(ObjectLifecycle.InstancePerCall);
-            configurer.ConfigureType<MessageBoxViewModel>(ObjectLifecycle.InstancePerCall);
             configurer.ConfigureType<DefaultClipboard>(ObjectLifecycle.InstancePerCall);
         }
     }

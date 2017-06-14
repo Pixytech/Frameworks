@@ -55,3 +55,5 @@ using System.Windows.Markup;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 [assembly: XmlnsDefinition("http://www.pixytech.com/infrastructure", "Pixytech.Desktop.Presentation.Infrastructure")]
+[assembly: XmlnsDefinition("http://www.pixytech.com/infrastructure", "Pixytech.Desktop.Presentation.Infrastructure.ViewModels")]
+[assembly: XmlnsPrefix("http://www.pixytech.com/infrastructure", "coreinfrastructure")]

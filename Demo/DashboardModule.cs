@@ -2,6 +2,7 @@
 using Demo.Modules;
 using Pixytech.Desktop.Presentation.Infrastructure.Services.Interfaces;
 using Microsoft.Practices.Prism.Regions;
+using Pixytech.Desktop.Presentation;
 
 namespace Demo
 {
@@ -24,6 +25,7 @@ namespace Demo
        public void Configure(IConfigureTypes configurer)
         {
             configurer.ConfigureType<RemoteModuleManager>(ObjectLifecycle.SingleInstance);
+            configurer.ConfigureType<ShellModule>(ObjectLifecycle.SingleInstance);
         }
     }
 }

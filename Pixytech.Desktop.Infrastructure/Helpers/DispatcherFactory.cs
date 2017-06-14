@@ -4,6 +4,7 @@ using System.Windows.Threading;
 
 namespace Pixytech.Desktop.Presentation.Infrastructure.Helpers
 {
+    [Obsolete()]
     internal class DispatcherFactory
     {
         public static IDispatcher GetDispatcher()
@@ -11,6 +12,7 @@ namespace Pixytech.Desktop.Presentation.Infrastructure.Helpers
             return Application.Current != null ? new AppDispatcher(Application.Current.Dispatcher) : new AppDispatcher();
         }
 
+        [Obsolete()]
         private class AppDispatcher : IDispatcher
         {
             private readonly Dispatcher _safeDispatcher;

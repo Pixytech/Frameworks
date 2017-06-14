@@ -9,6 +9,7 @@ using Pixytech.Core.Utilities;
 using Demo.Presentation.Infrastructure.Services;
 using Pixytech.Desktop.Presentation.Infrastructure;
 using Microsoft.Practices.Prism.Modularity;
+using Pixytech.Desktop.Presentation;
 
 namespace Demo.Modules
 {
@@ -51,6 +52,8 @@ namespace Demo.Modules
             var modules = new List<ModuleMetaData>(); // await _coreService.GetModulesMetaDataAsync();
 
             var componentsDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Components");
+
+            _remoteCatalog.AddModuleInfo(new ModuleInfo() { ModuleName= "Pixytech.Desktop.Presentation",InitializationMode=InitializationMode.WhenAvailable,ModuleType=typeof(ShellModule).AssemblyQualifiedName });
 
             foreach (var moduleMetaData in modules)
             {

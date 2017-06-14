@@ -57,5 +57,18 @@ using System.Windows.Markup;
 )]
 
 [assembly: XmlnsDefinition("http://www.pixytech.com/presentation", "Pixytech.Desktop.Presentation")]
+[assembly: XmlnsDefinition("http://www.pixytech.com/presentation", "Pixytech.Desktop.Presentation.Behaviors")]
+[assembly: XmlnsDefinition("http://www.pixytech.com/presentation", "Pixytech.Desktop.Presentation.AvalonDock")]
+[assembly: XmlnsDefinition("http://www.pixytech.com/presentation", "Pixytech.Desktop.Presentation.Bindings")]
+[assembly: XmlnsDefinition("http://www.pixytech.com/presentation", "Pixytech.Desktop.Presentation.Controls")]
+[assembly: XmlnsDefinition("http://www.pixytech.com/presentation", "Pixytech.Desktop.Presentation.Converters")]
+[assembly: XmlnsDefinition("http://www.pixytech.com/presentation", "Pixytech.Desktop.Presentation.DataVisualization")]
+[assembly: XmlnsDefinition("http://www.pixytech.com/presentation", "Pixytech.Desktop.Presentation.Interactivity")]
+[assembly: XmlnsDefinition("http://www.pixytech.com/presentation", "Pixytech.Desktop.Presentation.AvalonDock.Themes")]
+[assembly: XmlnsDefinition("http://www.pixytech.com/presentation", "Pixytech.Desktop.Presentation.AvalonDock.Controls")]
+[assembly: XmlnsDefinition("http://www.pixytech.com/presentation", "Pixytech.Desktop.Presentation.AvalonDock.Layout")]
+
+
 [assembly: AllowPartiallyTrustedCallers]
-[assembly: XmlnsPrefix("http://www.pixytech.com/presentation", "pixy")]
+[assembly: SecurityRules(SecurityRuleSet.Level1)]
+[assembly: XmlnsPrefix("http://www.pixytech.com/presentation", "corepresentation")]

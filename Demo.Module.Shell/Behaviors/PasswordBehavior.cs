@@ -6,7 +6,7 @@ using Pixytech.Desktop.Presentation.Behaviors;
 using Pixytech.Core.Utilities;
 using Pixytech.Core;
 
-namespace Graphnet.Dashboard.CoreUI.Behaviors
+namespace Demo.Module.Shell.Behaviors
 {
     public class PasswordBehavior : BehaviorBase<PasswordBox>
     {

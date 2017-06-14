@@ -7,7 +7,7 @@ using Pixytech.Core.IoC;
 using Microsoft.Practices.Prism.PubSubEvents;
 using Pixytech.Desktop.Presentation.Infrastructure;
 using Pixytech.Desktop.Presentation.Infrastructure.Services.Interfaces;
-using Pixytech.Desktop.Presentation.ViewModels;
+using Pixytech.Desktop.Presentation.Infrastructure.ViewModels;
 
 namespace Pixytech.Desktop.Presentation.Services
 {

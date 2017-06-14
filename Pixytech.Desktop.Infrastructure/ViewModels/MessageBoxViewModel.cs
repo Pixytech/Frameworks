@@ -4,9 +4,9 @@ using Pixytech.Desktop.Presentation.Infrastructure;
 using Pixytech.Desktop.Presentation.Infrastructure.Commands;
 using Pixytech.Desktop.Presentation.Infrastructure.Services.Interfaces;
 
-namespace Pixytech.Desktop.Presentation.ViewModels
+namespace Pixytech.Desktop.Presentation.Infrastructure.ViewModels
 {
-    internal class MessageBoxViewModel : ViewModelBase
+    public class MessageBoxViewModel : ViewModelBase
     {
         private readonly IDialogService _dialogService;
         private MessageBoxImage _icon;

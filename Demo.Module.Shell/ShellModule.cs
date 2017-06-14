@@ -1,4 +1,5 @@
 ﻿using Demo.Presentation.Infrastructure;
+using Demo.Module.Shell.ViewModels;
 using Microsoft.Practices.Prism.Regions;
 using Pixytech.Core.IoC;
 using Pixytech.Core.Logging;
@@ -9,26 +10,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Demo.Module.Shell
+namespace Pixytech.Desktop.Presentation
 {
     public class ShellModule : IModule, Microsoft.Practices.Prism.Modularity.IModule
     {
         private readonly ILog _logger = LogManager.GetLogger(typeof(ShellModule));
         private readonly IRegionManager _regionManager;
         private readonly IResourceAggregator _resourceAggregator;
+        private readonly IConfigureTypes configurer;
 
-        public ShellModule(IRegionManager regionManager, IResourceAggregator resourceAggregator)
+        public ShellModule(IRegionManager regionManager, IResourceAggregator resourceAggregator, IConfigureTypes configurer)
         {
             _regionManager = regionManager;
             _resourceAggregator = resourceAggregator;
+            this.configurer = configurer;
             _logger.InfoFormat("Instance created");
+          
         }
 
         public void Initialize()
         {
             _logger.InfoFormat("Initialize");
-            ObjectFactory.Configure(Configure);
-
+            Configure(this.configurer);
             _resourceAggregator.AddResource("Resources/ViewMappings.xaml");
 
             // Shell
