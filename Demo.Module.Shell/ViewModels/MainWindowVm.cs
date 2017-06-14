@@ -12,6 +12,7 @@ using Demo.Presentation.Infrastructure.Services;
 using Pixytech.Desktop.Presentation.Infrastructure.Commands;
 using Pixytech.Core.IoC;
 using System.Threading;
+using System.Collections.ObjectModel;
 
 namespace Demo.Module.Shell.ViewModels
 {
@@ -31,7 +32,7 @@ namespace Demo.Module.Shell.ViewModels
         {
             _settingsProvider = settingsProvider;
             _dialogService = dialogService;
-          
+            this.Messages = new ObservableCollection<long>();
             _themeService = themeService;
             ErrorWindowCommand = new DelegateCommand(OnShowErrorWindow);
             SettingsCommand = new DelegateCommand(OnShowSettings);
@@ -50,6 +51,23 @@ namespace Demo.Module.Shell.ViewModels
                     theme.FontSize = themeSettings.FontSize;
                 }
             }
+
+            Task.Run(() =>
+            {
+                long i = 0;
+                while (true)
+                {
+                    Message = DateTime.Now.Ticks.ToString();
+                    //    Thread.Sleep(1000);
+                 //   lock (Messages.SyncLock)
+                    {
+                        Messages.Add(i);
+                    }
+
+                    Thread.Sleep(1);
+                    i++;
+                }
+            });
         }
 
         private void OnShowLogonDetails()
@@ -59,14 +77,7 @@ namespace Demo.Module.Shell.ViewModels
 
         protected override async Task OnInitialize()
         {
-            Task.Run(() =>
-            {
-                while (true)
-                {
-                    Message = DateTime.Now.Ticks.ToString();
-                    Thread.Sleep(TimeSpan.FromSeconds(20));
-                }
-            });
+          
             await Task.CompletedTask;
         }
 
@@ -126,7 +137,6 @@ namespace Demo.Module.Shell.ViewModels
             set
             {
                 SetProperty(value); 
-                OnPropertyChanged(() => ShowNoModulesUi);
             }
         }
 
@@ -136,7 +146,15 @@ namespace Demo.Module.Shell.ViewModels
             set
             {
                 SetProperty(value);
-                OnPropertyChanged(() => Message);
+            }
+        }
+
+        public ObservableCollection<long> Messages
+        {
+            get { return GetProperty<ObservableCollection<long>>(); }
+            set
+            {
+                SetProperty(value);
             }
         }
 

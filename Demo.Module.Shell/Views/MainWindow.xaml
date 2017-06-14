@@ -103,8 +103,16 @@
     </gc:Interaction.Behaviors>
 
     <Grid>
-       
-        <TextBlock FontSize="32" Text="{Binding Message}"/>
+        <StackPanel Orientation="Vertical">
+            <TextBlock FontSize="32" Text="{Binding Message}"/>
+            <ListBox Height="300"   Width="500" ItemsSource="{Binding Messages}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock FontSize="32" Text="{Binding .}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
         <!--<gc:DockingManager Visibility="{Binding HasModules,Converter={StaticResource BoolToVisibilityConverter}}" Margin="0,0,0,0" Background="Transparent" AllowMixedOrientation="True" regions:RegionManager.RegionName="{x:Static cinf:RegionNames.MainRegion}">
             <gc:DockingManager.LayoutItemContainerStyle>
                 <Style TargetType="{x:Type gc:LayoutItem}">

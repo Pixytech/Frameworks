@@ -1,6 +1,9 @@
 ﻿using System.Windows;
 using Microsoft.Practices.Prism.Regions;
 using Pixytech.Core.IoC;
+using System.Windows.Data;
+using System;
+using Pixytech.Desktop.Presentation.Infrastructure;
 
 namespace Demo.Module.Shell.Views
 {
@@ -13,9 +16,11 @@ namespace Demo.Module.Shell.Views
         {
             InitializeComponent();
             Loaded += MainWindow_Loaded;
-          
+           
+
         }
 
+       
         void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             Loaded -= MainWindow_Loaded;

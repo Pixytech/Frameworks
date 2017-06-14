@@ -1,6 +1,10 @@
 ﻿using Pixytech.Core.IoC;
 using Pixytech.Desktop.Presentation.Helpers;
+using Pixytech.Desktop.Presentation.Infrastructure;
 using Pixytech.Desktop.Presentation.Services;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.Windows.Data;
 
 namespace Pixytech.Desktop.Presentation.DependancyInjection
 {
@@ -14,6 +18,26 @@ namespace Pixytech.Desktop.Presentation.DependancyInjection
             configurer.ConfigureType<DialogService>(ObjectLifecycle.SingleInstance);
             configurer.ConfigureType<ThemeService>(ObjectLifecycle.SingleInstance);
             configurer.ConfigureType<DefaultClipboard>(ObjectLifecycle.InstancePerCall);
+
+            BindingOperations.CollectionRegistering -= BindingOperations_CollectionRegistering;
+            BindingOperations.CollectionRegistering += BindingOperations_CollectionRegistering;
+            
+
+        }
+
+        private void BindingOperations_CollectionRegistering(object sender, CollectionRegisteringEventArgs e)
+        {
+            if (e.Collection != null && e.Collection is INotifyCollectionChanged)
+            {
+                if (e.Collection is INeedSyncronization)
+                {
+                    BindingOperations.EnableCollectionSynchronization(e.Collection, ((INeedSyncronization)e.Collection).SyncLock);
+                }
+                else
+                {
+                    BindingOperations.EnableCollectionSynchronization(e.Collection, new object());
+                }
+            }
         }
     }
 }

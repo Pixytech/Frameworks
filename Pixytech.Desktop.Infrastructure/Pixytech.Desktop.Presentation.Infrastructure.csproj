@@ -99,6 +99,7 @@
     <Compile Include="Helpers\ErrorsContainer.cs" />
     <Compile Include="Helpers\PropertyContainer.cs" />
     <Compile Include="IDispatcher.cs" />
+    <Compile Include="INeedSyncronization.cs" />
     <Compile Include="InfrastructureModule.cs" />
     <Compile Include="ISplash.cs" />
     <Compile Include="Modulatiry\AssemblyPart.cs" />
@@ -120,6 +121,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
+    <Compile Include="SafeObservableCollection.cs" />
     <Compile Include="ServiceLocator .cs" />
     <Compile Include="Services\Interfaces\FileDialogResult.cs" />
     <Compile Include="Services\Interfaces\FileType.cs" />

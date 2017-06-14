@@ -17,7 +17,9 @@ namespace Pixytech.Desktop.Presentation.Behaviors
             var target = AssociatedObject;
             if (target != null)
             {
-                HookupBehavior(target);
+                
+                    HookupBehavior(target);
+                
             }
             else
             {
@@ -37,6 +39,8 @@ namespace Pixytech.Desktop.Presentation.Behaviors
             }
 
             _weakTarget = new WeakReference(target);
+            target.Unloaded -= OnTargetUnloaded;
+            target.Loaded -= OnTargetLoaded;
             _isHookedUp = true;
             target.Unloaded += OnTargetUnloaded;
             target.Loaded += OnTargetLoaded;

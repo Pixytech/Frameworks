@@ -12,6 +12,7 @@ namespace Pixytech.Desktop.Presentation.Behaviors
 
         protected override void OnSetup()
         {
+            AssociatedObject.DataContextChanged -= AssociatedObject_DataContextChanged;
             AssociatedObject.DataContextChanged += AssociatedObject_DataContextChanged;
             ContextInitialize();
         }
