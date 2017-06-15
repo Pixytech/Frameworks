@@ -80,10 +80,6 @@
       <Project>{30CF2675-F9F1-4996-80F4-7DF2ECC03D44}</Project>
       <Name>Pixytech.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Pixytech.Desktop.Presentation\Pixytech.Desktop.Presentation.csproj">
-      <Project>{9d679b46-3629-4143-b77f-abd6e0ac4490}</Project>
-      <Name>Pixytech.Desktop.Presentation</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

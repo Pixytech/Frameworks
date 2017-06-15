@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Configuration;
-using System.Net.Http;
 
 namespace Pixytech.Core
 {
