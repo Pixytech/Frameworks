@@ -1,6 +1,7 @@
 ﻿using Pixytech.Core.IoC;
 using Pixytech.Desktop.Presentation.Helpers;
 using Pixytech.Desktop.Presentation.Infrastructure;
+using Pixytech.Desktop.Presentation.Infrastructure.Services.Interfaces;
 using Pixytech.Desktop.Presentation.Services;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -29,14 +30,8 @@ namespace Pixytech.Desktop.Presentation.DependancyInjection
         {
             if (e.Collection != null && e.Collection is INotifyCollectionChanged)
             {
-                if (e.Collection is INeedSyncronization)
-                {
-                    BindingOperations.EnableCollectionSynchronization(e.Collection, ((INeedSyncronization)e.Collection).SyncLock);
-                }
-                else
-                {
-                    BindingOperations.EnableCollectionSynchronization(e.Collection, new object());
-                }
+                var @lock = ObjectFactory.Builder.Build<ICollectionLockProvider>().GetLock(e.Collection);
+                BindingOperations.EnableCollectionSynchronization(e.Collection, @lock);
             }
         }
     }

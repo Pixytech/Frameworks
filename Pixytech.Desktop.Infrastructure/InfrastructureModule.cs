@@ -14,6 +14,7 @@ namespace Pixytech.Desktop.Presentation.Infrastructure
             configurer.ConfigureType<IDispatcher>(DispatcherFactory.GetDispatcher, ObjectLifecycle.InstancePerCall);
             configurer.ConfigureType<ThemeBuilderViewModel>(ObjectLifecycle.InstancePerCall);
             configurer.ConfigureType<MessageBoxViewModel>(ObjectLifecycle.InstancePerCall);
+            configurer.ConfigureType<CollectionLockProvider>(ObjectLifecycle.SingleInstance);
         }
     }
 }

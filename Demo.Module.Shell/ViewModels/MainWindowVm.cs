@@ -58,6 +58,8 @@ namespace Demo.Module.Shell.ViewModels
                 while (true)
                 {
                     Message = DateTime.Now.Ticks.ToString();
+
+                    this.ComplexObject = new ComplexObjectImp() { Message = Message };
                     //    Thread.Sleep(1000);
                  //   lock (Messages.SyncLock)
                     {
@@ -137,6 +139,28 @@ namespace Demo.Module.Shell.ViewModels
             set
             {
                 SetProperty(value); 
+            }
+        }
+
+        
+       public ComplexObjectImp ComplexObject
+        {
+            get { return GetProperty<ComplexObjectImp>(); }
+            set
+            {
+                SetProperty(value);
+            }
+        }
+
+        public class ComplexObjectImp : ViewModelBase
+        {
+            public string Message
+            {
+                get { return GetProperty<string>(); }
+                set
+                {
+                    SetProperty(value);
+                }
             }
         }
 

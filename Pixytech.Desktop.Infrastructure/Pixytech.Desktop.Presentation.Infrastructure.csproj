@@ -95,6 +95,7 @@
     <Compile Include="Commands\DelegateCommandOfT.cs" />
     <Compile Include="Commands\WeakEventHandlerManager.cs" />
     <Compile Include="ExtendedRegionNavigationContentLoader.cs" />
+    <Compile Include="Helpers\CollectionLockProvider.cs" />
     <Compile Include="Helpers\DispatcherFactory.cs" />
     <Compile Include="Helpers\ErrorsContainer.cs" />
     <Compile Include="Helpers\PropertyContainer.cs" />
@@ -126,6 +127,7 @@
     <Compile Include="Services\Interfaces\FileDialogResult.cs" />
     <Compile Include="Services\Interfaces\FileType.cs" />
     <Compile Include="Services\Interfaces\FontSize.cs" />
+    <Compile Include="Services\Interfaces\ICollectionLockProvider.cs" />
     <Compile Include="Services\Interfaces\IDialogOptions.cs" />
     <Compile Include="Services\Interfaces\IDialogService.cs" />
     <Compile Include="Services\Interfaces\IFileDialogService.cs" />

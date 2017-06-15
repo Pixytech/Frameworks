@@ -105,6 +105,9 @@
     <Grid>
         <StackPanel Orientation="Vertical">
             <TextBlock FontSize="32" Text="{Binding Message}"/>
+            <Grid DataContext="{Binding ComplexObject}">
+                <TextBlock FontSize="32" Text="{Binding Message}"/>
+            </Grid>
             <ListBox Height="300"   Width="500" ItemsSource="{Binding Messages}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
