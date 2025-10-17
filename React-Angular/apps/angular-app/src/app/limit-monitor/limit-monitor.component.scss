@@ -1,0 +1,94 @@
+// Limit Monitor component styles using core theme
+@import '../../../../../libs/angular/src/lib/antd-components.scss';
+
+// Limit Monitor-specific styles
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: $spacing-lg;
+  margin-top: $spacing-lg;
+}
+
+.stat-item {
+  text-align: center;
+  padding: $spacing-lg;
+  background: $background-color-light;
+  border-radius: $border-radius-md;
+  border: 1px solid $border-color-light;
+}
+
+.stat-title {
+  font-size: $font-size-sm;
+  color: $text-color-secondary;
+  margin-bottom: $spacing-sm;
+}
+
+.stat-value {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-semibold;
+  color: $primary-color;
+}
+
+.alert-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.alert-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: $spacing-lg;
+  border: 1px solid $border-color-light;
+  border-radius: $border-radius-md;
+  margin-bottom: $spacing-md;
+  background: $background-color;
+  transition: all 0.2s;
+
+  &:hover {
+    box-shadow: $box-shadow-md;
+  }
+}
+
+.alert-content {
+  flex: 1;
+}
+
+.alert-header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  margin-bottom: $spacing-sm;
+}
+
+.alert-time {
+  font-size: $font-size-xs;
+  color: $text-color-secondary;
+}
+
+.alert-message {
+  color: $text-color;
+  font-size: $font-size-sm;
+  line-height: 1.5;
+}
+
+.alert-actions {
+  margin-left: $spacing-lg;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .alert-item {
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+  
+  .alert-actions {
+    margin-left: 0;
+    align-self: flex-end;
+  }
+}

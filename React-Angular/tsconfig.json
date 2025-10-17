@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./libs/core"
+    },
+    {
+      "path": "./libs/angular"
+    },
+    {
+      "path": "./apps/angular-app"
+    }
+  ]
+}
