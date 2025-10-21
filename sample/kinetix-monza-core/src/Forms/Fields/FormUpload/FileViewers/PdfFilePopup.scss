@@ -1,0 +1,25 @@
+.pdf-viewer-popup {
+    @import "@kinetix/core/src/Theme/Styles/DefaultVariables.scss";
+    background-color: $kx-panel-400;
+    flex: content;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    .ticket-dialog-header{
+      gap: 10px;
+      display: flex;
+      align-items: center;
+      .header-title{
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 700;
+        color: $kx-content-200;
+      }
+      
+    }
+    .k-window-content {
+        display: flex;
+        flex: content;
+        
+      }
+}

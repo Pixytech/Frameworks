@@ -1,0 +1,20 @@
+.darkTheme-layout {
+  height: 100%;
+  width: 100%;
+  $kendo-is-dark-theme: true;
+  $kx-is-dark-theme: true;
+  @import "../Styles/DarkThemeVariables.scss";
+  @import "../Styles/KendoThemeVariables.scss";
+  @import "../Styles/Typography.scss";
+  background-color: $kendo-component-bg !important;
+
+  .container {
+    background-color: $kendo-body-bg !important;
+  }
+  @at-root #{&} {
+    @import "../Styles/GlobalVariables.scss";
+    @include global-css-variables;
+    @import "~@progress/kendo-theme-default/dist/all.scss";
+    @import "../Styles/overrides.scss";
+  }
+}

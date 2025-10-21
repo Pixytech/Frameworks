@@ -1,0 +1,27 @@
+@mixin global-css-variables {
+  --kx-primary-400: #{$kx-primary-400};
+  --kx-primary-200: #{$kx-primary-200};
+  --kx-primary-600: #{$kx-primary-600};
+  --kx-error-400: #{$kx-error-400};
+  --kx-correct-400: #{$kx-correct-400};
+  --kx-warning-400: #{$kx-warning-400};
+  --kx-warning-800: #{$kx-warning-800};
+  --kx-series-a-400: #{$kx-series-a-400};
+  --kx-series-b-400: #{$kx-series-b-400};
+  --kx-series-c-400: #{$kx-series-c-400};
+  --kx-series-d-400: #{$kx-series-d-400};
+  --kx-series-e-400: #{$kx-series-e-400};
+  --kx-series-f-400: #{$kx-series-f-400};
+  --kx-content-50: #{$kx-content-50};
+  --kx-content-200: #{$kx-content-200};
+  --kx-content-400: #{$kx-content-400};
+  --kx-content-700: #{$kx-content-700};
+  --kx-content-900: #{$kx-content-900};
+  --kx-panel-350: #{$kx-panel-350};
+  --kx-panel-400: #{$kx-panel-400};
+  --kx-panel-500: #{$kx-panel-500};
+  --kx-panel-700: #{$kx-panel-700};
+  --kx-panel-900: #{$kx-panel-900};
+  --kx-font-family-base: #{$kx-font-family-base};
+
+}

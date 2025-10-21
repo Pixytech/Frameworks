@@ -1,0 +1,51 @@
+@import "@kinetix/core/src/Theme/Styles/DefaultVariables.scss";
+
+.list-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .k-listbox {
+    flex: 1 !important;
+    width: calc(100% - 15px) !important;
+    overflow: scroll;
+    margin-left: 1em;
+    padding-top: 0.5em;
+    .k-list-ul {
+      border: none !important;
+    }
+
+    .k-list-scroller {
+      height: 100% !important;
+      border: none !important;
+      background-color: transparent !important;
+    }
+  }
+
+  .top-bar {
+    display: flex;
+    height: min-content;
+
+    .search-input {
+      width: 50% !important;
+      margin: 0.5em;
+      margin-bottom: 0;
+    }
+  }
+
+  .column-list-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid $kx-panel-700;
+    cursor: pointer;
+
+    .checkbox {
+      .label {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}

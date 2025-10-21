@@ -1,0 +1,10 @@
+.grid-list-tooltip {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  .container {
+    border-radius: 8px;
+    overflow: auto;
+    max-height: 300px;
+  }
+}

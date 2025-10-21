@@ -1,0 +1,95 @@
+.kx-widget.kx-live-inquiry-widget {
+  @import "@kinetix/core/src/Theme/Styles/DefaultVariables.scss";
+
+  &.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .k-grid {
+    height: 100%;
+    width: 100%;
+    background-color: transparent !important;
+
+    .k-grid-header,
+    .k-grid-content {
+      background-color: transparent !important;
+      border: none;
+    }
+
+    .k-grid-header {
+      font-weight: 500;
+      font-size: 0.875rem;
+      line-height: 1rem;
+      color: $kx-content-400;
+      padding-top: 0.5rem;
+
+      .k-grid-header-wrap,
+      th {
+        border: none;
+      }
+    }
+
+    .k-grid-content {
+      font-weight: 500;
+      font-size: 0.875rem;
+      line-height: 1rem;
+      color: #f0f0f0;
+
+      td {
+        border: none;
+        border-bottom: 1px solid #044979;
+      }
+
+      .timer {
+        display: "flex";
+        justify-content: "center" !important;
+        align-items: center;
+        background: #1194e5;
+        border-radius: 4px;
+        padding: 0 0.625rem;
+        font-weight: 600;
+        font-size: 0.75rem;
+        line-height: 1rem;
+        color: #f0f0f0;
+        max-height: 1rem !important;
+        transition: all 0.3s ease-in-out;
+
+        &.timed-out {
+          background: #f8475c;
+          color: #233a5e;
+        }
+      }
+
+      &::-webkit-scrollbar {
+        width: 0 !important;
+        height: 0.5rem !important;
+      }
+
+      &::-webkit-scrollbar-track {
+        border-radius: 0.25rem !important;
+        background: #003356 !important;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 0.25rem !important;
+        background: #044979 !important;
+      }
+    }
+
+    .amount-col {
+      text-align: right;
+    }
+  }
+
+  .kx-countdown {
+    background-color: #1194e5;
+    border-radius: 4px;
+
+    &.timed-out {
+      background-color: #f8475c;
+      color: #f0f0f0;
+    }
+  }
+}

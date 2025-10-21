@@ -1,0 +1,73 @@
+.pdf-viewer {
+  @import "@kinetix/core/src/Theme/Styles/DefaultVariables.scss";
+  display: flex;
+  flex: content;
+  padding: 0;
+  margin: 0;
+  height: calc(100% - 2px);
+  max-height: 100%;
+  width: 100%;
+  flex-direction: column;
+  border: 0;
+  overflow: hidden;
+  background-color: $kx-panel-700;
+  .pdf-toolbar {
+    flex: none;
+    .zoomList {
+      min-width: 120px;
+    }
+    border-bottom: 1px solid $kx-content-700;
+  }
+  .pdf-container {
+    flex-direction: row;
+    display: flex;
+    overflow: hidden;
+    flex: content;
+    .k-pane{
+      display: flex;
+      
+      .pdf-container-inner {
+        display: flex;
+        flex: content;
+        overflow: hidden;
+        .k-pdf-viewer{
+          display: flex;
+          flex: content;
+        }
+        .k-pdf-viewer-pages {
+          flex: content;
+        }
+      }
+    }
+    
+
+    .editPanel {
+      display: flex;
+      flex-direction: column;
+      flex: content;
+      overflow: hidden;
+      max-width: 100%;
+      max-height: 100%;
+      background-color: $kx-panel-400;
+      padding: 0;
+      border-left: 1px solid $kx-content-700;
+      margin: 0;
+
+    }
+    .editPanel-left {
+      flex: content;
+      border-left: 1px solid $kx-content-700;
+    }
+    .editPanel-right {
+      flex: content;
+      border-right: 1px solid $kx-content-700;
+    }
+  }
+  .loading-panel {
+    background-color: transparent;
+    pointer-events: none;
+    .busy-text {
+      opacity: 0;
+    }
+  }
+}

@@ -1,0 +1,99 @@
+@import "@kinetix/core/src/Theme/Styles/DefaultVariables.scss";
+
+.kx-widget.kx-top-n-widget {
+  .k-grid {
+    height: 100%;
+    width: 100%;
+    background-color: transparent !important;
+    .k-grid-content,
+    .k-grouping-header {
+      background-color: transparent !important;
+      border: none;
+    }
+
+    .k-grid-header {
+      font-weight: 500;
+      font-size: 0.875rem;
+      line-height: 1rem;
+      padding-top: 0.5rem;
+
+      .k-grid-header-wrap,
+      th {
+        border: none;
+        color: $kx-content-400;
+      }
+    }
+
+    .k-grid-content {
+      font-weight: 500;
+      font-size: 0.875rem;
+      line-height: 1rem;
+      color: #f0f0f0;
+
+      td {
+        border: none;
+        border-bottom: 1px solid #044979;
+      }
+
+      .timer {
+        display: "flex";
+        justify-content: "center" !important;
+        align-items: center;
+        background: #1194e5;
+        border-radius: 4px;
+        padding: 0 0.625rem;
+        font-weight: 600;
+        font-size: 0.75rem;
+        line-height: 1rem;
+        color: #f0f0f0;
+        max-height: 1rem !important;
+        transition: all 0.3s ease-in-out;
+
+        &.timed-out {
+          background: #f8475c;
+          color: #233a5e;
+        }
+      }
+
+      &::-webkit-scrollbar {
+        width: 0 !important;
+        height: 0.5rem !important;
+      }
+
+      &::-webkit-scrollbar-track {
+        border-radius: 0.25rem !important;
+        background: #003356 !important;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 0.25rem !important;
+        background: #044979 !important;
+      }
+    }
+
+    .amount-col {
+      text-align: right;
+    }
+
+    td {
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      &:not(:first-of-type) {
+        padding-left: 0.1rem;
+      }
+
+      .progress {
+        height: 0.25rem;
+        width: 100%;
+
+        .k-selected {
+          background-color: $kx-correct-400;
+          border-color: $kx-correct-400;
+        }
+      }
+    }
+  }
+}

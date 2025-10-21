@@ -1,0 +1,32 @@
+@import "@kinetix/core/src/Theme/Styles/DefaultVariables.scss";
+.blotterContextMenu {
+  div {
+    background-color: $kx-panel-400;
+    border: 0.1rem solid $kx-primary-200 !important;
+
+    box-shadow: 0.2rem 0.5rem 6rem $kx-panel-400 !important;
+    min-width: fit-content;
+    .k-separator {
+      border-top: 2px solid $kx-primary-400 !important;
+      opacity: 0.3;
+    }
+
+    .k-menu:not(.k-context-menu) > .k-item {
+      color: $kx-content-200;
+      margin: 0px;
+      .k-menu-link {
+        cursor: pointer;
+        margin: 0px;
+        padding: 0.5rem 1rem;
+        padding-right: calc(1rem + 1rem);
+        color: $kx-content-200 !important;
+      }
+
+      .k-menu-link:hover {
+        cursor: pointer;
+        color: $kx-content-50 !important;
+        background-color: $kx-primary-200;
+      }
+    }
+  }
+}

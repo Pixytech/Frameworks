@@ -1,0 +1,560 @@
+@import "@kinetix/core/src/Theme/Styles/DefaultVariables.scss";
+
+div.k-form-field {
+  margin: 0.2em;
+}
+.form-boolean-field {
+  .k-stack-layout {
+    .k-label {
+      visibility: hidden !important;
+    }
+  }
+}
+button.icon-class-multi,
+button.icon-class-date,
+button.icon-class-numeric {
+  &:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+input.k-input[disabled] {
+  font-size: 0.75rem;
+  background: $kx-panel-700;
+  color: $kx-content-200;
+  border: 0px;
+  border-radius: 0.5rem;
+}
+
+.instrument-accelerator .k-combobox .k-icon-button {
+  visibility: hidden !important;
+}
+.accelerator-popup {
+  background: $kx-panel-400;
+  div {
+    background: $kx-panel-400;
+  }
+
+  border: 2px solid $kx-panel-900;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.8) !important;
+  border-radius: 8px;
+  .popup-container {
+    padding: 1rem;
+    label {
+      font-size: 0.8rem !important;
+    }
+    .k-button {
+      border: 1px solid $kx-content-700 !important;
+      &:hover,
+      &:focus,
+      &:active {
+        background: $kx-content-700 !important;
+      }
+    }
+    .k-selected {
+      background: $kx-content-700 !important;
+    }
+    .accelerator-list-options {
+      display: flex;
+      padding: 5px 0;
+      .k-button {
+        font-weight: 500;
+        font-size: 0.8rem;
+        line-height: 15px;
+        display: flex;
+        border: none !important;
+        align-items: center;
+        list-style: none;
+        color: $kx-content-200;
+        padding: 3px;
+      }
+    }
+  }
+}
+
+.ticket-wrapper {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 0.1em;
+  display: inline-flex;
+  flex: content;
+  $transition: 0.3s all ease-in-out;
+  .row-footer,
+  .row-submit {
+    margin-bottom: 0.1em;
+  }
+  .row-header {
+    margin: 0.5em;
+  }
+  .form-content {
+    background: $kx-panel-400;
+    display: flex;
+    flex-direction: column;
+    flex: content;
+    overflow: auto;
+    padding: 0px;
+    .k-animation-container.k-animation-container-relative {
+      position: relative;
+      display: flex !important;
+      flex-direction: column;
+      overflow: hidden;
+      .k-child-animation-container {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        flex: content;
+
+        margin: 0px !important;
+        padding: 0;
+        > div {
+          display: flex;
+          overflow: auto;
+          flex-direction: column;
+          flex: content;
+          background: $kx-panel-400;
+        }
+      }
+    }
+    .k-tabstrip-content.k-active {
+      position: relative;
+      padding: 0px;
+
+      display: flex;
+    }
+  }
+  .k-form-field,
+  .k-upload {
+    font-size: 0.8rem !important;
+
+    font-family: "Montserrat";
+
+    .k-label {
+      display: inline-block !important;
+      color: $kx-content-200 !important;
+    }
+  }
+
+  .k-tabstrip {
+    height: 100%;
+
+    .k-tabstrip-items-wrapper .k-item.k-active .k-link {
+      border-bottom: solid 3px $kx-primary-400 !important;
+    }
+  }
+
+  .k-form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: content;
+    margin: 0px;
+    .form-card {
+      display: flex;
+      flex: content;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      background: $kx-panel-400 !important;
+      margin: 0em;
+      border-radius: 0.25em;
+      .formTitle {
+        color: $kx-content-200;
+        margin: 0.125em;
+        font-size: 0.875em;
+        font-family: "Montserrat";
+        font-weight: bold;
+        .title {
+          font-size: 1.125em;
+        }
+        .subtitle {
+          font-weight: normal !important;
+        }
+      }
+    }
+    .k-form-field {
+      margin-top: 0 !important;
+    }
+
+    .k-button {
+      border-radius: 0.3rem;
+      border: 1px solid $kx-content-900;
+      &:focus-visible {
+        border: 1px solid $kx-content-700;
+      }
+    }
+
+    .k-button-link {
+      border: 1px solid transparent;
+    }
+
+    .k-daterangepicker {
+      background: var(--kx-panel-700);
+    }
+
+    .k-switch {
+      .k-switch-track {
+        height: 1.5rem;
+        padding: 0;
+        border-color: $kx-content-700;
+      }
+
+      .k-switch-thumb {
+        height: 1.13rem;
+        width: 1.13rem;
+        border-color: $kx-content-700;
+      }
+    }
+
+    .checkbox-field {
+      width: 100% !important;
+      .k-stack-layout {
+        width: 100% !important;
+        display: block !important;
+        > div:nth-of-type(1) {
+          float: right;
+          width: 80% !important;
+          margin: 0 0 0 0px !important;
+        }
+        > span:nth-of-type(1) {
+          float: left;
+          margin-left: 0.1em;
+          width: 15% !important;
+        }
+      }
+    }
+  }
+
+  .k-upload {
+    margin-top: 0.5rem;
+  }
+
+  h3 {
+    padding: 0px 0.5rem;
+    margin: 0;
+  }
+
+  .divider {
+    border-bottom: 0.125em solid $kx-panel-700 !important;
+    width: 100%;
+    margin: 0.625rem 0;
+  }
+
+  .custom-divider {
+    border-bottom: 0.875rem solid $kx-panel-700 !important;
+    width: 100%;
+    margin: 0.5rem 0 !important;
+  }
+
+  .custom-horizontal-divider {
+    border-right: 0.5rem solid $kx-panel-700 !important;
+    margin: 0.313rem;
+    min-height: 100%;
+    display: inline-flex;
+  }
+
+  .field-group {
+    display: flex;
+    flex: content;
+    .k-grid-layout {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .loading-panel {
+    z-index: 200;
+
+    position: absolute;
+    margin-right: 0em;
+    margin-top: 0em;
+    border-width: 0.4em;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .ticket-field-default .k-input-spinner button,
+  .icon-class-multi .k-input-button span,
+  .icon-class-date .k-input-button span {
+    display: block;
+  }
+  @mixin accelerator_icon($url) {
+    background: none !important;
+    color: $kx-content-200;
+
+    border: none;
+
+    cursor: pointer;
+    .k-input-spinner {
+      height: 14px;
+      width: 14px;
+      background: url($url) no-repeat !important;
+    }
+  }
+
+  .icon-class-date {
+    @include accelerator_icon("../resources/images/Date.svg");
+  }
+
+  .icon-class-numeric {
+    @include accelerator_icon("../resources/images/Numerical.svg");
+  }
+
+  .icon-class-multi {
+    @include accelerator_icon("../resources/images/Multi.svg");
+  }
+
+  .field-disabled .ticket-field-default {
+    opacity: 0.4;
+    background: $kx-content-900 !important;
+  }
+
+  .fieldWrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex: content;
+    .field {
+      display: flex;
+      flex: content;
+      flex-direction: row;
+    }
+    button {
+      border-radius: 0.3rem;
+      background: $kx-panel-700;
+      &:focus-visible {
+        outline: none;
+      }
+    }
+    &.hidden {
+      visibility: hidden;
+    }
+    .focusable-form-field {
+      display: flex !important;
+      height: 100%;
+      width: 100%;
+
+      &.pos-left {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &.pos-top {
+        flex-direction: column;
+        align-items: start;
+
+        width: 100%;
+        height: 100%;
+      }
+
+      .field-content {
+        &.pos-left {
+          margin-left: 0.3em;
+          width: 100%;
+        }
+        &.pos-top {
+          margin-top: 0.3em;
+          height: 100%;
+          width: 100%;
+        }
+        flex: content;
+        .field-host {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          .field-component {
+            width: 100%;
+            height: 100%;
+          }
+          .field-info {
+            position: absolute;
+            top: -1.4em;
+            right: 0.2em;
+            &.hidden {
+              visibility: hidden;
+            }
+          }
+        }
+      }
+
+      .k-input {
+        font-size: 0.75rem !important;
+        background: transparent;
+        color: $kx-content-200 !important;
+        border: 0px;
+        border-radius: 0.5rem;
+      }
+
+      .k-dropdownlist,
+      .k-input-button,
+      .k-input-spinner,
+      .k-spinner-decrease,
+      .k-spinner-increase {
+        font-size: 0.75rem !important;
+        background: transparent;
+        border: 0px;
+      }
+
+      .k-checkbox {
+        border: 0.1rem solid $kx-content-700 !important;
+        border-radius: 0.2rem !important;
+        margin: 0.1rem;
+      }
+      .k-checkbox-label {
+        font-size: 0.8rem !important;
+        font-family: "Montserrat";
+      }
+
+      > [disabled][aria-disabled="true"] {
+        background-color: $kx-content-900;
+        border: none;
+      }
+
+      .required-field-empty {
+        &::after {
+          background: $kx-primary-200;
+        }
+      }
+
+      .required-field-empty.k-invalid {
+        &::after {
+          background: $kx-error-400;
+        }
+      }
+
+      .required-field-populated {
+        &:after {
+          background-color: $kx-correct-400;
+        }
+      }
+
+      .has-error {
+        &:after {
+          background-color: $kx-error-400;
+        }
+      }
+    }
+  }
+}
+
+.validation-error {
+  color: $kx-error-400 !important;
+  font-size: 0.8rem !important;
+  float: right;
+}
+
+.validation-warning {
+  color: $kx-error-400 !important;
+  font-size: 0.8rem !important;
+  float: right;
+}
+
+.validation-info {
+  color: $kx-correct-400 !important;
+  font-size: 0.8rem !important;
+  float: right;
+}
+
+//scrollbar design
+::-webkit-scrollbar {
+  width: 0.5rem !important;
+  /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: $kx-panel-400 !important;
+  /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background: $kx-content-700 !important;
+  /* color of the scroll thumb */
+  border-radius: 0.625rem !important;
+  /* roundness of the scroll thumb */
+}
+
+::-webkit-scrollbar-corner {
+  background: $kx-panel-400 !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: $kx-content-200 !important;
+  -webkit-box-shadow: 0 0 0 50px $kx-panel-700 inset !important;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-layout {
+  .field-root {
+    .focusable-form-field {
+      .ui-field {
+        .k-input {
+          font-size: 0.75rem !important;
+          color: $kx-content-200 !important;
+          border-radius: 0.5rem;
+          min-height: 23px;
+          border: 0 !important;
+          align-self: flex-start;
+          margin: 0;
+          padding: 0;
+          flex: content;
+          width: 100%;
+          height: 100%;
+        }
+        .k-input-outline {
+          border: 0px;
+          width: 100%;
+          font-size: 0.75rem !important;
+          background: $kx-panel-700;
+          color: $kx-content-200 !important;
+          border-radius: 0.5rem;
+        }
+
+        .k-dropdownlist {
+          //width: 100%; this is breaking the dropdown on kendo grid filters
+          font-size: 0.75rem !important;
+          padding: 0.125em 0.125em !important;
+          background: $kx-panel-700;
+          border: 0px;
+          border-radius: 0.2em;
+        }
+        .k-multiselecttree {
+          max-width: calc(100% - 20px);
+        }
+        .k-input-button {
+          font-size: 0.75rem !important;
+          padding: 0.125em 0.125em !important;
+          background: $kx-panel-700;
+          border: 0px;
+          border-radius: 0.2em;
+        }
+
+        .k-checkbox {
+          border: 0.1rem solid $kx-content-700 !important;
+          border-radius: 0.2rem !important;
+          margin: 0.1rem;
+        }
+        .k-checkbox-label {
+          width: 100%;
+          font-size: 0.8rem !important;
+          font-family: "Montserrat";
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,143 @@
+@import "@kinetix/core/src/Theme/Styles/DefaultVariables.scss";
+
+.format-options {
+  display: inline-block;
+
+  .selected-options {
+    display: flex;
+    align-items: center;
+
+    .dot {
+      margin-left: 0.15rem;
+    }
+
+    .edit-options {
+      margin-left: auto;
+    }
+  }
+
+  .icon {
+    height: 1.25rem;
+  }
+
+  .dot {
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    height: 0.875rem;
+    width: 0.875rem;
+    margin-right: 0.25rem;
+
+    &.text-color {
+      border-width: 2px;
+    }
+  }
+
+  &.popup-content {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 25rem;
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.875rem;
+      line-height: 1rem;
+
+      .title {
+        font-weight: 700;
+      }
+
+      .delete-btn {
+        font-weight: 500;
+        color: #eb173e;
+        cursor: pointer;
+      }
+    }
+
+    .preview {
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid $kx-panel-700;
+      text-align: center;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .row-decor {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .k-switch {
+          .k-switch-track {
+            height: 1.5rem;
+            padding: 0;
+            border-color: $kx-content-700;
+          }
+
+          .k-switch-thumb {
+            height: 1.13rem;
+            width: 1.13rem;
+            border-color: $kx-content-700;
+          }
+        }
+      }
+
+      .text-decor {
+        display: flex;
+        gap: 1rem;
+
+        .icon {
+          height: 1.75rem !important;
+
+          cursor: pointer;
+          transition: 0.3s all ease-in-out;
+
+          &.selected {
+            background-color: $kx-panel-350;
+            border-radius: 0.25rem;
+          }
+        }
+      }
+
+      .color-tabs .color-selector {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .none {
+          height: 1.5rem;
+          width: 1.5rem;
+        }
+
+        .dot {
+          cursor: pointer;
+          transition: 0.3s all ease-in-out;
+          margin: 0;
+
+          &.text-color {
+            height: 2rem;
+            width: 2rem;
+            border-width: 0.125rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          &.bg-color {
+            height: 1.5rem;
+            width: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}

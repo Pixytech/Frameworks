@@ -1,0 +1,115 @@
+@import "@kinetix/core/src/Theme/Styles/DefaultVariables.scss";
+
+.remote-file-browser-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .loading-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+
+      .loading-message {
+        margin-top: 16px;
+        color: var(--kx-content-200);
+      }
+    }
+
+    .error-container {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background-color: var(--kx-error-800);
+      border: 1px solid var(--kx-error-400);
+      border-radius: 4px;
+      margin-bottom: 20px;
+
+      .error-icon {
+        color: var(--kx-error-400);
+        margin-right: 8px;
+      }
+
+      .error-message {
+        color: var(--kx-error-400);
+      }
+    }
+
+    .file-grid-container {
+      flex: 1;
+      overflow: hidden;
+
+      .remote-file-grid {
+        height: 100% !important;
+        min-height: 400px;
+
+        .file-name-cell {
+          display: flex;
+          align-items: center;
+
+          .file-icon {
+            margin-right: 8px;
+            color: var(--kx-primary-400);
+          }
+
+          .file-name {
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+
+        .k-grid-content {
+          overflow-y: auto;
+        }
+
+        .k-grid-header {
+          background-color: var(--kx-panel-400);
+          border-bottom: 1px solid var(--kx-panel-350);
+        }
+
+        // Style for the select all checkbox in header
+        .k-grid-header th:first-child {
+          text-align: center;
+          
+          input[type="checkbox"] {
+            cursor: pointer;
+          }
+        }
+
+        tbody tr {
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+
+          &:hover {
+            background-color: var(--kx-panel-500);
+          }
+
+          &.k-selected {
+            background-color: var(--kx-primary-800);
+          }
+          
+          // Center align the checkbox column
+          td:first-child {
+            text-align: center;
+            
+            input[type="checkbox"],
+            input[type="radio"] {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    .dialog-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      padding: 16px 20px 16px 0;
+      border-top: 1px solid var(--kx-panel-350);
+    }
+  }

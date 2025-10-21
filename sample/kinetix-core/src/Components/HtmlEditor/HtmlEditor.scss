@@ -1,0 +1,217 @@
+@import "../../Theme/Styles/DefaultVariables.scss";
+@import "../../Theme/Styles/KendoThemeVariables.scss";
+
+.htmlSnippet {
+  background-color: transparent;
+
+  border: none;
+  display: flex;
+  flex: content;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  .htmlSnippet-container {
+    background-color: transparent;
+    border: none;
+    padding-inline: 0px;
+    display: flex;
+    flex: content;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    .htmlSnippet-body {
+      display: block;
+      flex: content;
+      overflow: auto;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.print-frame {
+  width: 100vw;
+  height: 100vh;
+  @media print {
+    * {
+      page-break-after: avoid !important;
+      page-break-before: avoid !important;
+      page-break-inside: avoid !important;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  position: absolute;
+  border: none;
+  background-color: $kx-panel-400 !important;
+  z-index: 0;
+
+  .placeholders {
+    display: flex !important;
+    flex: content !important;
+    overflow: visible !important;
+    border: none !important;
+    max-width: unset !important;
+    max-height: unset !important;
+    padding: unset !important;
+    margin: unset !important;
+    background-color: transparent !important;
+    page-break-inside: avoid;
+  }
+
+  .element-print-target-html-editor {
+    display: flex !important;
+    flex: content !important;
+    overflow: visible !important;
+    page-break-inside: avoid;
+    .k-editor {
+      display: flex !important;
+      flex: content !important;
+      overflow: visible !important;
+      background-color: $kx-panel-400 !important;
+      border: none !important;
+      page-break-inside: avoid;
+      .k-toolbar {
+        display: none !important;
+      }
+      .k-editor-content {
+        background-color: $kx-panel-400 !important;
+        border: none !important;
+        page-break-inside: avoid;
+      }
+    }
+  }
+
+  .element-print-target {
+    display: flex !important;
+    flex: content !important;
+    border: none !important;
+    padding: unset !important;
+    margin: unset !important;
+    background-color: transparent !important;
+  }
+}
+
+.html-editor {
+  background: $kx-panel-700;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+  *::selection {
+    background: $kx-primary-600;
+    color: $kx-content-50;
+  }
+
+  &.html-editor h3 {
+    padding: initial;
+    margin: initial;
+  }
+
+  /* For Mozilla Firefox */
+  *::-moz-selection {
+    background: $kx-primary-600;
+    color: $kx-content-50;
+  }
+
+  .selected-text {
+    background: $kx-primary-600;
+    color: $kx-content-50;
+  }
+  .k-editor {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+    background-color: $kx-panel-400 !important;
+    flex: content;
+    border-radius: 0.5rem;
+    padding: 0.1rem;
+    .k-editor-content {
+      min-height: unset !important;
+      flex: content;
+      > .ProseMirror {
+        overflow: visible !important;
+
+        div:has(> table) {
+          display: flex;
+          flex-direction: column;
+
+          table {
+            flex: content;
+            width: unset !important;
+            pointer-events: all;
+          }
+        }
+        + table {
+          p {
+            text-wrap: wrap;
+          }
+        }
+      }
+    }
+  }
+
+  .k-separator {
+    border-top: 2px solid $kx-primary-400 !important;
+    opacity: 0.3;
+  }
+
+  .loading-panel {
+    position: absolute !important;
+  }
+}
+.editorMenu {
+  background-color: $kx-panel-400 !important;
+  border: 0.1rem solid $kx-primary-200 !important;
+
+  box-shadow: 0.2rem 0.5rem 6rem $kx-panel-400 !important;
+
+  .k-separator {
+    border-top: 2px solid $kx-primary-400 !important;
+    opacity: 0.3;
+    margin-block: 0px !important;
+  }
+
+  .k-item {
+    color: $kx-content-200;
+    margin: 0px;
+    .k-menu-link {
+      cursor: pointer;
+      margin: 0px;
+      padding: 0.5rem 1rem;
+      padding-right: calc(1rem + 1rem);
+      color: $kx-content-200 !important;
+    }
+
+    .k-menu-link:hover {
+      cursor: pointer;
+      color: $kx-content-50 !important;
+      background-color: $kx-primary-200 !important;
+    }
+  }
+}
+
+.html-editor-wrapper {
+  position: relative;
+  overflow: auto;
+  display: flex;
+
+  & .editorComponent {
+    flex: 1;
+  }
+
+  & .editor-gutter {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 2rem !important;
+  }
+
+  & .definition-icon {
+    position: absolute;
+    left: -10px;
+  }
+}

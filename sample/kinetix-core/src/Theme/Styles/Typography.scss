@@ -1,0 +1,27 @@
+@use "sass:math";
+$kendo-font-size: 0.875rem;
+$kendo-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Roboto Mono", "Ubuntu Mono", "Lucida Console", "Courier New", monospace;
+$kendo-line-height: math.div(20, 14);
+
+$tb-typography: (
+  default-typography: (
+    font-family: $kendo-font-family-monospace,
+    font-size: 0.875rem,
+    font-weight: 400,
+      line-height: math.div(20, 14),
+  ),
+);
+
+@mixin typography-classes($typography) {
+  @each $selector, $property in $typography {
+    &-#{$selector} {
+      @each $propName, $propValue in $property {
+        #{$propName}: $propValue;
+      }
+    }
+  }
+}
+
+%tb-typography {
+  @include typography-classes($tb-typography);
+}

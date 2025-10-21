@@ -1,0 +1,5 @@
+export * from "./ITagAdapter"
+export * from "./ITagManagerService"
+export * from "./TagManagerService"
+export * from "./Adapters"
+export * from "./TagManagerHooks"

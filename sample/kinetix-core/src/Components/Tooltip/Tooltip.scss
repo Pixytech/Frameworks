@@ -1,0 +1,131 @@
+.tooltip-container {
+  @import "@kinetix/core/src/Theme/Styles/DefaultVariables.scss";
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 10003;
+
+  #tooltip-body {
+    width: 400px;
+    height: min-content;
+    position: relative;
+    border-radius: 14px !important;
+
+    & button {
+      font-weight: 600;
+    }
+
+    & .button-next {
+      display: flex;
+      align-items: center;
+
+      & .arrow-right-icon {
+        margin-left: 0.5rem;
+      }
+    }
+
+    & .k-popover {
+      border-radius: 16px !important;
+      border: 1px solid $kx-primary-400 !important;
+    }
+
+    & .k-popover-header {
+      border: none !important;
+    }
+
+    & .k-popover-body {
+      padding-top: 0;
+    }
+
+    & .k-popover-callout {
+      & .beacon-container {
+        position: relative;
+        transform: translate(-50%, -50%);
+        background-color: $kx-warning-400;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        opacity: 0.7;
+
+        & ::before {
+          background-color: $kx-warning-400;
+          content: "";
+          top: calc(50% - 7px);
+          left: calc(50% - 7px);
+          width: 15px;
+          height: 15px;
+          opacity: 1;
+          border-radius: 50%;
+          position: absolute;
+          animation: burst-animation 1s infinite;
+          animation-delay: 2s;
+          animation-fill-mode: forwards;
+          z-index: 0;
+        }
+
+        @keyframes burst-animation {
+          from {
+            opacity: 1;
+            transform: scale(1);
+          }
+          to {
+            opacity: 0;
+            transform: scale(4);
+          }
+        }
+      }
+
+      & .beacon-top {
+        bottom: -28px !important;
+        right: -28px !important;
+      }
+
+      & .beacon-bottom {
+        top: -10px !important;
+        left: -10px !important;
+      }
+
+      & .beacon-left {
+        top: 28px !important;
+        left: 28px !important;
+      }
+
+      & .beacon-right {
+        top: 30px !important;
+        left: -12px !important;
+      }
+    }
+
+    & .tooltip-header-wrapper,
+    & .tooltip-footer-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    & .tooltip-header-wrapper {
+      & div {
+        display: flex;
+        align-items: center;
+
+        & span {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+
+    & .tooltip-content-wrapper {
+      p {
+        margin: 0;
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        margin: 0;
+        font-weight: 700;
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+
+.multi-user-session-dialog {
+  @import "@kinetix/core/src/Theme/Styles/DefaultVariables.scss";
+  .k-window-titlebar {
+    .k-window-title {
+      font-weight: 500;
+    }
+  }
+  .k-window-content{
+    display: flex;
+    flex: content;
+    overflow: hidden;
+    
+    .multi-session-content{
+      padding: 10px;
+      display: flex;
+      flex: content;
+      overflow: hidden;
+      flex-direction: column;
+      .message{
+        display: block;
+        flex: content;
+        .time{
+          min-width: 20px;
+          justify-content: center;
+          display: inline-flex;
+          font-weight: 600;
+          color: $kx-primary-200;
+        }
+      }
+      .actions{
+        display: flex;
+        flex-direction: column;
+        align-self: flex-end;
+    }
+    }
+    
+  }
+}
