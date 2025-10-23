@@ -1,0 +1,25 @@
+@import "@kinetix/core/src/Theme/Styles/DefaultVariables.scss";
+$tab-header-bg: $kx-panel-400;
+$tab-header-selected-bg: $kx-panel-350;
+$tabheader-text-color: $kx-content-200;
+$tabheader-text-selected-color: $kx-content-200;
+.apps {
+  height: calc(100% - 60px);
+  .main-grid {
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    .card-tile {
+      min-height: 9rem;
+      width: 18rem;
+      .k-card-header {
+        padding: 8px 10px;
+      }
+      .k-card-body {
+        padding: 5px 10px;
+      }
+    }
+  }
+}
